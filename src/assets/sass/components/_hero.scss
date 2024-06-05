@@ -2,21 +2,31 @@
 
     
     &__titles {
-        padding: 80px 22px 0 50px;
-        margin-bottom: 120px;
+        padding: 80px 22px 120px 50px;
+        @include tablet {
+            padding: 17px 10px 10px 10px;
+        }
     }
 
     &__title {
-        font-size: clamp(32px, 5vw, 64px);
+        font-size: clamp(32px, 4vw, 64px);
         line-height: 109%;
         text-transform: uppercase;
+        margin-bottom: 20px;
+        max-width: 70%;
+        @include tablet {
+            max-width: 100%;
+        }
     }
 
     &__subtitle {
-        font-size: clamp(20px, 5vw, 64px);
+        font-size: clamp(20px, 4vw, 64px);
         line-height: 125%;
         font-weight: 300;
         max-width: 60%;
+        @include tablet {
+            max-width: 100%;
+        }
     }
 
     &__img {
@@ -24,6 +34,18 @@
         top: 0;
         right: 0;
         z-index: -1;
+        width: clamp(400px, 40vw, 691px);
+        opacity: 1;
+        visibility: visible;
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        @include tablet {
+            position: static;
+            width: 50%;
+            margin: 0 auto;
+        }
+        @include tablet-sm {
+            max-width: 320px;
+        }
     }
 
     &__circle {
@@ -31,6 +53,9 @@
         top: -70%;
         left: 0;
         z-index: -1;
+        @include tablet {
+            top: -70%;
+        }
     }
 
     &__table {
@@ -52,18 +77,33 @@
     &__header-item {
     }
 
+    &__top {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+    }
+
     &__tabs {
         display: flex;
+        
     }
 
     &__tabs-btns {
         display: flex;
         flex-direction: column;
         margin-top: 92px;
+        // @include tablet {
+        //     display: none;
+        // }
+        
     }
 
     &__tabs-contents {
         flex-grow: 1;
+        @include tablet {
+            display: none;
+        }
     }
 
     &__tabitem {
@@ -75,6 +115,9 @@
         padding: 13px 47px;
         flex-shrink: 0;
         transition: .3s background ease;
+        @include desktop-md {
+            padding: 13px 20px;
+        }
         &:hover {
             background: $tabitem-bg;
         }
@@ -90,6 +133,22 @@
         padding: 28px 45px 42px 33px;
     }
 }
+
+.hero-table-top {
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+    &__item {
+        &--bg {
+            background: $deals-bg;
+            padding: 12px 8px;
+            border-radius: 77px;
+        }
+    }
+}
 .hero-table-tabitem {
 
     &__wrapper {
@@ -99,22 +158,27 @@
     }
 }
 .crypto-name {
-    font-size: 20px;
+    font-size: clamp(15px, 1.5vw, 20px);
     line-height: 100%;
     font-weight: 700;
 }
 .crypto-deals {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 8px 14px;
     background: $deals-bg;
     border-radius: 100px;
     min-height: 39px;
     &__value {
-        font-size: 20px;
+        font-size: clamp(15px, 1.5vw, 20px);
         font-weight: 700;
         line-height: 100%;
     }
 
     &__today {
+        font-size: clamp(13px, 1vw, 16px);
         font-weight: 400;
         line-height: 100%;
     }
@@ -136,12 +200,28 @@
 
     &__head-th {
         padding: 26px 0;
+        height: 70px;
+        font-weight: 400;
+        font-size: clamp(12px, 1vw, 16px);
         &:first-child {
             border-radius: 30px 0 0 30px;
         }
         &:last-child {
             border-radius: 0 30px 30px 0;
+            padding-right: 20px;
         }
+        // @include tablet {
+        //     &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+        //         display: none;
+        //     }
+        // }
+
+        // &--date {
+        //     display: none;
+        //     @include tablet {
+        //         display: table-cell;
+        //     }
+        // }
     }
 
     &__body {
@@ -181,14 +261,27 @@
             }
         }
         
+        &--actual {
+            background: $tabitem-actual-bg;
+            // @include tablet {
+            //     display: table-row;
+            // }
+            // .tabcontent-hero-table__body-td {
+            //     &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+            //         display: none;
+            //     }
+            // }
+            
+        }
     }
 
 
     &__body-td {
         background: $tabitem-bg;
         text-align: center;
-        padding: 28px 0;
-        // border-bottom: 1px solid $table-border;
+        padding: 26px 0;
+        font-size: clamp(12px, 1vw, 16px);
+        height: 70px;
     }
 
 

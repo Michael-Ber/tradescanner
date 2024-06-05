@@ -21,10 +21,12 @@ const burger = () => {
     const body = document.querySelector('.page__body');
     const links = document.querySelectorAll('.burger__item');
     const account = header.querySelector('.header__account');
+    const imgHeroSection = document.querySelector('.hero__img');
     burgerBtn.addEventListener('click', () => {
       menu.classList.toggle('burger__menu--active');
       burgerBtn.classList.toggle('burger__btn--active');
       account.classList.toggle('hidden');
+      imgHeroSection.classList.toggle('hidden');
       burger.classList.toggle('align-right');
       if (burgerBtn.classList.contains('burger__btn--active')) {
         burgerBtn.setAttribute('aria-expanded', true);
@@ -56,6 +58,7 @@ const burger = () => {
       body.classList.remove('page__body--scroll-unable');
       account.classList.remove('hidden');
       burger.classList.remove('align-right');
+      imgHeroSection.classList.remove('hidden');
     }
   } catch (error) {
     console.log(error);

@@ -1,6 +1,6 @@
 $site-container-width: 1920px;
 
-$title-gradient: linear-gradient(90deg, #3e158e 0%, #00f0ff 40%);
+$title-gradient: linear-gradient(90deg, #3e158e 0%, #00f0ff 100%);
 
 $maxWidth: 1920;
 $minWidth: 320;
@@ -17,5 +17,6 @@ $green: #9aecb1;
 
 $deals-bg: rgba(#0e020d, .3);
 $tabitem-bg: rgba(#181818, .5);
+$tabitem-actual-bg: rgba(#313131, .5);
 $table-header-bg: rgba(#777777, .3);
 $table-border: #2c2b2b;
