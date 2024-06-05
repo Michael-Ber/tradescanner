@@ -1,0 +1,232 @@
+.hero {
+
+    
+    &__titles {
+        padding: 80px 22px 0 50px;
+        margin-bottom: 120px;
+    }
+
+    &__title {
+        font-size: clamp(32px, 5vw, 64px);
+        line-height: 109%;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-size: clamp(20px, 5vw, 64px);
+        line-height: 125%;
+        font-weight: 300;
+        max-width: 60%;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+    &__circle {
+        position: absolute;
+        top: -70%;
+        left: 0;
+        z-index: -1;
+    }
+
+    &__table {
+        position: relative;
+    }
+}
+.hero-table {
+
+    &__header-list {
+        display: flex;
+        justify-content: space-between;
+        padding: 13px 72px 13px 77px;
+        background: $table-header-bg;
+        border-radius: 84px;
+        width: 80%;
+        margin-left: auto;
+    }
+
+    &__header-item {
+    }
+
+    &__tabs {
+        display: flex;
+    }
+
+    &__tabs-btns {
+        display: flex;
+        flex-direction: column;
+        margin-top: 92px;
+    }
+
+    &__tabs-contents {
+        flex-grow: 1;
+    }
+
+    &__tabitem {
+        width: 100%;
+        color: $white;
+        align-self: flex-start;
+        border-radius: 30px 0 0 30px;
+        min-height: 73px;
+        padding: 13px 47px;
+        flex-shrink: 0;
+        transition: .3s background ease;
+        &:hover {
+            background: $tabitem-bg;
+        }
+    }
+
+    &__tabitem--active {
+        background: $tabitem-bg;
+    }
+
+    &__tabcontent {
+        display: none;
+        width: 96%;
+        padding: 28px 45px 42px 33px;
+    }
+}
+.hero-table-tabitem {
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+.crypto-name {
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 700;
+}
+.crypto-deals {
+    padding: 8px 14px;
+    background: $deals-bg;
+    border-radius: 100px;
+    min-height: 39px;
+    &__value {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 100%;
+    }
+
+    &__today {
+        font-weight: 400;
+        line-height: 100%;
+    }
+}
+.tabcontent-hero-table {
+    border-collapse: collapse;
+    &__list {
+        
+    }
+
+    &__head {
+        background: $table-header-bg;
+        .empty {
+            background: transparent;
+            height: 22px;
+            width: 100%;
+        }
+    }
+
+    &__head-th {
+        padding: 26px 0;
+        &:first-child {
+            border-radius: 30px 0 0 30px;
+        }
+        &:last-child {
+            border-radius: 0 30px 30px 0;
+        }
+    }
+
+    &__body {
+        
+    }
+
+    &__body-tr {
+        position: relative;
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 92%;
+                transform: translateX(-50%);
+                height: 1px;
+                background: $table-border;
+            }
+        }
+        &:first-child {
+            .tabcontent-hero-table__body-td {
+                &:last-child {
+                    border-radius: 0 30px 0 0;
+                }
+            }
+        }
+        &:last-child {
+            .tabcontent-hero-table__body-td {
+                &:first-child {
+                    border-radius: 0 0 0 30px;
+                }
+                &:last-child {
+                    border-radius: 0 0 30px 0;
+                }
+            }
+        }
+        
+    }
+
+
+    &__body-td {
+        background: $tabitem-bg;
+        text-align: center;
+        padding: 28px 0;
+        // border-bottom: 1px solid $table-border;
+    }
+
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item--actual {
+    }
+}
+.item-tabcontent-hero-table {
+
+    &__style {
+    }
+
+    &__tiker {
+    }
+
+    &__range {
+    }
+
+    &__profit {
+    }
+
+    &__stop {
+    }
+
+    &__tp {
+    }
+
+    &__sp {
+    }
+
+    &__risk {
+    }
+}
+.minus {
+}
+.plus {
+}

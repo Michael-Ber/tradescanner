@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: clamp(20px, 5vw, 100px);
+    padding: 20px 80px 20px 50px;
+    @include tablet {
+        align-items: center;
+    }
+    @include mobile {
+        padding: 20px 18px;
+    }
+
+    &__account {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 0 0 auto;
+        gap: clamp(20px, 5vw, 36px);
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: clamp(10px, 2vw, 36px);
+        
+        &:hover {
+            .header-user__login {
+                color: $blue-900;
+            }
+        }
+        &:focus {
+            .header-user__login {
+                color: $blue-900;
+            }
+        }
+    }
+}
+.logo {
+    transition: .3s transform ease-in-out;
+    &:hover {
+        transform: scale(1.05);
+    }
+    &__img {
+        width: clamp(280px, 20vw, 339px);
+        @include desktop-md {
+            width: 74px;
+        }
+    }
+}
+.nav {
+    @include tablet {
+        display: none;
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, 3vw, 76px);
+    }
+
+    &__item {
+        line-height: 60%;
+        transition: .3s color ease-in-out;
+        font-size: 16px;
+        &:hover {
+            color: $blue-900;
+        }
+    }
+
+    &__item--active {
+        color: $blue-900;
+    }
+
+}
+.telegram {
+
+    &__svg {
+        width: clamp(23px, 3vw, 39px);
+    }
+}
+.header-user {
+
+    &__svg {
+        width: clamp(19px, 3vw, 28px);
+    }
+
+    &__login {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 80%;
+        color: $white;
+        transition: .3s color ease-in-out;
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.burger {
+    @include burger;
+}
+
+.align-right {
+    margin-left: auto;
+}
