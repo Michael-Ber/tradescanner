@@ -13,7 +13,9 @@ export const burger = () => {
             menu.classList.toggle('burger__menu--active');
             burgerBtn.classList.toggle('burger__btn--active');
             account.classList.toggle('hidden');
-            imgHeroSection.classList.toggle('hidden');
+            if(imgHeroSection) {
+                imgHeroSection.classList.toggle('hidden');
+            }
             burger.classList.toggle('align-right');
             if(burgerBtn.classList.contains('burger__btn--active')) {
                 burgerBtn.setAttribute('aria-expanded', true);
@@ -46,7 +48,9 @@ export const burger = () => {
             body.classList.remove('page__body--scroll-unable');
             account.classList.remove('hidden');
             burger.classList.remove('align-right');
-            imgHeroSection.classList.remove('hidden');
+            if(imgHeroSection) {
+                imgHeroSection.classList.remove('hidden');
+            }
         }
         
     } catch (error) {

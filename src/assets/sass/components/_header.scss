@@ -13,11 +13,32 @@
     }
 
     &__account {
+        position: relative;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         margin: 0 0 0 auto;
         gap: clamp(20px, 5vw, 36px);
+    }
+
+    &__popup {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: -20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 33px 50px 60px 50px;
+        border-radius: 30px;
+        background: $black-900;
+        min-width: clamp(280px, 30vw, 420px);
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        z-index: 9;
+        @include mobile {
+            right: -40px;
+            top: calc(100% + 20px);
+        }
     }
 
     &__user {
@@ -27,11 +48,6 @@
         gap: clamp(10px, 2vw, 36px);
         
         &:hover {
-            .header-user__login {
-                color: $blue-900;
-            }
-        }
-        &:focus {
             .header-user__login {
                 color: $blue-900;
             }
@@ -46,6 +62,19 @@
         }
     }
 }
+
+.header-popup {
+    &__link {
+        color: $white;
+        font-weight: 300;
+        font-size: clamp(14px, 4vw, 20px);
+        transition: .3s color ease-in-out;
+        &:hover {
+            color: $blue-800
+        }
+    }
+}
+
 .logo {
     transition: .3s transform ease-in-out;
     &:hover {

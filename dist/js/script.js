@@ -26,7 +26,9 @@ const burger = () => {
       menu.classList.toggle('burger__menu--active');
       burgerBtn.classList.toggle('burger__btn--active');
       account.classList.toggle('hidden');
-      imgHeroSection.classList.toggle('hidden');
+      if (imgHeroSection) {
+        imgHeroSection.classList.toggle('hidden');
+      }
       burger.classList.toggle('align-right');
       if (burgerBtn.classList.contains('burger__btn--active')) {
         burgerBtn.setAttribute('aria-expanded', true);
@@ -58,8 +60,45 @@ const burger = () => {
       body.classList.remove('page__body--scroll-unable');
       account.classList.remove('hidden');
       burger.classList.remove('align-right');
-      imgHeroSection.classList.remove('hidden');
+      if (imgHeroSection) {
+        imgHeroSection.classList.remove('hidden');
+      }
     }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/changeInput.js":
+/*!**************************************!*\
+  !*** ./src/assets/js/changeInput.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   changeInput: () => (/* binding */ changeInput)
+/* harmony export */ });
+const changeInput = () => {
+  try {
+    const amounts = document.querySelectorAll('.payment-item__amount');
+    amounts.forEach(amount => {
+      const minus = amount.querySelector('.payment-item__minus');
+      const plus = amount.querySelector('.payment-item__plus');
+      const input = amount.querySelector('.payment-item__value');
+      minus.addEventListener('click', () => {
+        if (input.value > 0) {
+          input.value--;
+        }
+      });
+      plus.addEventListener('click', () => {
+        if (input.value < 9) {
+          input.value++;
+        }
+      });
+    });
   } catch (error) {
     console.log(error);
   }
@@ -79,24 +118,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const popup = () => {
   try {
-    const btns = document.querySelectorAll('[data-popup]');
-    const popups = document.querySelectorAll('.hero-table__popup');
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        closeAll();
-        document.querySelector(`[data-popup-content = ${btn.getAttribute('data-popup')}]`).classList.toggle('hidden');
+    function heroPopup() {
+      const btns = document.querySelectorAll('[data-popup]');
+      const popups = document.querySelectorAll('.hero-table__popup');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          closeAll();
+          document.querySelector(`[data-popup-content = ${btn.getAttribute('data-popup')}]`).classList.toggle('hidden');
+        });
       });
-    });
-    window.addEventListener('click', e => {
-      if (e.target.classList.contains('hero-table__popup')) {
-        closeAll();
+      window.addEventListener('click', e => {
+        if (e.target.classList.contains('hero-table__popup')) {
+          closeAll();
+        }
+      });
+      function closeAll() {
+        popups.forEach(popup => {
+          popup.classList.add('hidden');
+        });
       }
-    });
-    function closeAll() {
-      popups.forEach(popup => {
-        popup.classList.add('hidden');
+    }
+    heroPopup();
+    function headerPopup() {
+      const trigger = document.querySelector('.header__user');
+      const user = trigger.querySelector('.header-user__login');
+      const popup = document.querySelector('.header__popup');
+      trigger.addEventListener('click', () => {
+        popup.classList.toggle('hidden');
+        if (popup.classList.contains('hidden')) {
+          user.style.color = '#ffffff';
+        } else {
+          user.style.color = '#40acff';
+        }
       });
     }
+    headerPopup();
   } catch (error) {
     console.log(error);
   }
@@ -261,6 +317,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./table.js */ "./src/assets/js/table.js");
 /* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popup.js */ "./src/assets/js/popup.js");
 /* harmony import */ var _popupForm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popupForm.js */ "./src/assets/js/popupForm.js");
+/* harmony import */ var _changeInput_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./changeInput.js */ "./src/assets/js/changeInput.js");
+
 
 
 
@@ -270,6 +328,7 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_table_js__WEBPACK_IMPORTED_MODULE_1__.table)();
   (0,_popup_js__WEBPACK_IMPORTED_MODULE_2__.popup)();
   (0,_popupForm_js__WEBPACK_IMPORTED_MODULE_3__.popupForm)();
+  (0,_changeInput_js__WEBPACK_IMPORTED_MODULE_4__.changeInput)();
 });
 })();
 

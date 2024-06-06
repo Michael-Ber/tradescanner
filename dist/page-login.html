@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Site</title>
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="page__body">
+    <div class="site-container">
+        <!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="header__logo logo">
+        <picture>
+          <source srcset="/assets/img/logo.svg" media="(min-width: 1200px)">
+          <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
+          <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+        </picture>
+        
+    </a>
+    <nav class="nav" title="Меню навигации">
+      <ul class="list-reset nav__list">
+        <li class="nav__item nav__item--active"><a href="#" class="nav__link">О сканере</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Риск менеджмент</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Как пользоваться</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header__account">
+        <a href="#" class="telegram">
+            <img loading="lazy" src="/assets/img/telegram.svg" class="telegram__svg" width="39" height="39" alt="Телеграм">
+        </a>
+        <button class="btn-reset header__user header-user">
+            <img loading="lazy" src="/assets/img/user.svg" class="header-user__svg" width="28" height="28" alt="Пользователь">
+            <span class="header-user__login">Вход</span>
+        </button>
+        <div class="header__popup header-popup hidden">
+            <a href="#" class="header-popup__link">Личный кабинет</a>
+            <a href="page-login.html" class="header-popup__link">Логин</a>
+            <a href="#" class="header-popup__link">Подписки</a>
+            <a href="#" class="header-popup__link">Контакты</a>
+            <a href="page-payment.html" class="header-popup__link">Оплата</a>
+            <a href="#" class="header-popup__link">Выход</a>
+        </div>
+    </div>
+    <div class="burger" title="Бургер меню">
+        <button class="burger__btn" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="burger__menu" aria-hidden="true">
+          <nav class="burger__nav" title="Меню навигации">
+            <ul class="burger__list">
+              <li class="burger__item"><a href="#" class="burger__link">О сканере</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Риск менеджмент</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Как пользоваться</a></li>
+            </ul>
+          </nav>
+         </div>
+      </div>
+</header>
+<!-- /HEADER -->
+        <main class="main">
+            <!-- LOGIN -->
+<div class="login page-auth">
+    <img loading="lazy" src="/assets/img/webp/circle-hero.webp" class="page-auth__img login__img" width="1197" height="714">
+    <div class="login__wrapper page-auth__wrapper">
+        <h1 class="login__title page-auth__title text-gradient">вход</h1>
+        <form action="#" class="login__form page-auth__form">
+            <input type="email" placeholder="Ваш e-mail" class="input-reset login__input page-auth__input">
+            <input type="password" placeholder="Пароль" class="input-reset login__input page-auth__input">
+            <button class="btn-reset login__btn page-auth__btn" type="submit">Войти</button>
+        </form>
+        <div class="login__links">
+            <a href="page-register.html" class="login__link login__register">Пройти регистрацию</a>
+            <a href="page-password.html" class="login__link login__password">Восстановить пароль</a>
+        </div>
+    </div>
+    
+</div>
+<!-- /LOGIN -->
+        </main>
+        <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__block footer__block--logo">
+        <a href="#" class="footer__logo logo">
+            <picture>
+                <source srcset="/assets/img/logo.svg" media="(min-width: 768px)">
+                <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
+                <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+              </picture>
+        </a>
+    </div>
+    <div class="footer__block footer__block--nav">
+        <nav class="nav footer__nav" title="Навигация по сайту">
+          <ul class="list-reset nav__list footer__nav-list">
+            <li class="nav__item nav__item--active footer__nav-item"><a href="#" class="nav__link">О сканере</a></li>
+            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Риск менеджмент</a></li>
+            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Как пользоваться</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="footer__block footer__block--links">
+        <ul class="list-reset footer__list">
+            <li class="footer__item"><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Пользовательское соглашение</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Не является индивидуальной инвестиционной рекомендацией</a></li>
+        </ul>
+    </div>
+    <div class="footer__block footer__block--social">
+        <span class="footer__label">Мы в соц сетях</span>
+        <a href="#" class="footer__social-link" aria-label="Телеграм">
+            <img loading="lazy" src="/assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
+        </a>
+    </div>
+    <div class="footer__rights">
+        <span>© 2024 Все права защищены</span>
+        <span>ООО "Трейдсканер"</span>
+    </div>
+</footer>
+<!-- /FOOTER -->
+    </div>
+    <script defer src="js/script.js"></script>
+</body>
+</html>

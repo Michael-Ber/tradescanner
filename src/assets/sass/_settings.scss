@@ -100,3 +100,52 @@ h1, h2, h3, h4, h5, h6 {
 .plus {
     color: $green;
 }
+
+.page-auth {
+    position: relative;
+    padding: 100px 20px;
+    &__wrapper {
+        max-width: 570px;
+        margin: 0 auto;
+    }
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        @include mobile {
+            top:10%;
+        }
+    }
+    &__title {
+        font-size: clamp(30px, 4vw, 64px);
+        line-height: 110%;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__input {
+        border-radius: 2px;
+        padding: clamp(20px, 5vw, 27px);
+        color: $black;
+        background: $white;
+        max-height: 75px;
+        &::placeholder {
+            color: $gray-100;
+            font-weight: 400;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+    }
+
+    &__btn {
+        color: $white;
+        padding: clamp(18px, 5vw, 24px) 0;
+        background: $blue-900;
+        font-weight: 700;
+        font-size: clamp(16px, 4vw, 24px);
+        max-height: 75px;
+    }
+}
