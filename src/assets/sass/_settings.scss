@@ -14,6 +14,9 @@ html {
         font-weight: 700;
         background: $black;
         color: $white;
+        &--scroll-unable {
+            overflow: hidden;
+        }
     }
 }
 
@@ -63,12 +66,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .article-title {
-    font-size: clamp(20px, 4vw, 48px);
+    font-size: clamp(20px, 3vw, 48px);
     line-height: clamp(146%, 5vw, 150%);
+    text-transform: uppercase;
 }
 
 .article-text {
-    font-size: clamp(14px, 4vw, 20px);
+    font-size: clamp(14px, 2vw, 20px);
     line-height: clamp(130%, 20vw, 143%);
     font-weight: 400;
 }
@@ -79,7 +83,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hidden {
-    // display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
 }

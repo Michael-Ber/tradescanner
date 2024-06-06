@@ -1,3 +1,4 @@
+// HEADER
 .header {
     display: flex;
     align-items: flex-end;
@@ -36,17 +37,19 @@
             }
         }
     }
+    &__logo {
+        .logo__img {
+            width: clamp(280px, 20vw, 339px);
+            @include desktop-md {
+                width: 74px;
+            }
+        }
+    }
 }
 .logo {
     transition: .3s transform ease-in-out;
     &:hover {
         transform: scale(1.05);
-    }
-    &__img {
-        width: clamp(280px, 20vw, 339px);
-        @include desktop-md {
-            width: 74px;
-        }
     }
 }
 .nav {
@@ -104,3 +107,5 @@
 .align-right {
     margin-left: auto;
 }
+
+// END HEADER

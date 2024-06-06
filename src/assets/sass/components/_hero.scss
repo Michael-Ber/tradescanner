@@ -1,6 +1,6 @@
+// HERO
 .hero {
 
-    
     &__titles {
         padding: 80px 22px 120px 50px;
         @include tablet {
@@ -42,9 +42,10 @@
             position: static;
             width: 50%;
             margin: 0 auto;
+            margin-bottom: 20px;
         }
-        @include tablet-sm {
-            max-width: 320px;
+        @include mobile {
+            width: 100%;
         }
     }
 
@@ -53,13 +54,16 @@
         top: -70%;
         left: 0;
         z-index: -1;
-        @include tablet {
-            top: -70%;
+        @include mobile {
+            width: 100%;
         }
     }
 
     &__table {
         position: relative;
+        @include mobile {
+            padding: 0 16px;
+        }
     }
 }
 .hero-table {
@@ -74,29 +78,33 @@
         margin-left: auto;
     }
 
-    &__header-item {
-    }
-
     &__top {
         display: none;
         @include tablet {
             display: block;
+            margin-bottom: 13px;
         }
     }
 
     &__tabs {
         display: flex;
-        
+        @include tablet {
+            display: block;
+        }
     }
 
     &__tabs-btns {
         display: flex;
         flex-direction: column;
         margin-top: 92px;
-        // @include tablet {
-        //     display: none;
-        // }
-        
+        @include tablet {
+            align-items: center;
+            max-width: 495px;
+            margin: 0 auto;
+        }
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     &__tabs-contents {
@@ -118,6 +126,12 @@
         @include desktop-md {
             padding: 13px 20px;
         }
+        @include tablet {
+            width: unset;
+            min-height: 48px;
+            border-radius: 30px;
+            padding: 5px 20px;
+        }
         &:hover {
             background: $tabitem-bg;
         }
@@ -132,6 +146,15 @@
         width: 96%;
         padding: 28px 45px 42px 33px;
     }
+
+    &__mobile-content {
+        display: none;
+        padding: 20px 0; 
+        @include mobile {
+            font-size: 14px;
+            width: 75%;
+        }
+    }
 }
 
 .hero-table-top {
@@ -140,12 +163,22 @@
         justify-content: center;
         align-items: center;
         gap: 50px;
+        @include mobile {
+            gap: 10px;
+            justify-content: space-between;
+        }
     }
     &__item {
+        @include mobile {
+            font-size: 12px;
+        }
         &--bg {
             background: $deals-bg;
             padding: 12px 8px;
             border-radius: 77px;
+            @include mobile {
+                padding: 12px 4px;
+            }
         }
     }
 }
@@ -182,12 +215,50 @@
         font-weight: 400;
         line-height: 100%;
     }
+    @include tablet {
+        background: none;
+    }
+}
+.table-mobile-content {
+    &__main {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-left: 40px;
+        @include mobile {
+            @include adaptive-size('margin-left', 70, 0, 575, 320);
+            gap: 30px;
+        }
+    }
+    &__main {
+        margin-bottom: 20px;
+        @include mobile {
+            justify-content: space-between;
+        }
+    }
+    &__other {
+        display: flex;
+        justify-content: space-between;
+        max-width: 90%;
+    }
+    &__names {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__name {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+    &__value {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
 }
 .tabcontent-hero-table {
     border-collapse: collapse;
-    &__list {
-        
-    }
 
     &__head {
         background: $table-header-bg;
@@ -199,6 +270,7 @@
     }
 
     &__head-th {
+        position: relative;
         padding: 26px 0;
         height: 70px;
         font-weight: 400;
@@ -210,22 +282,7 @@
             border-radius: 0 30px 30px 0;
             padding-right: 20px;
         }
-        // @include tablet {
-        //     &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
-        //         display: none;
-        //     }
-        // }
-
-        // &--date {
-        //     display: none;
-        //     @include tablet {
-        //         display: table-cell;
-        //     }
-        // }
-    }
-
-    &__body {
-        
+    
     }
 
     &__body-tr {
@@ -263,15 +320,6 @@
         
         &--actual {
             background: $tabitem-actual-bg;
-            // @include tablet {
-            //     display: table-row;
-            // }
-            // .tabcontent-hero-table__body-td {
-            //     &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
-            //         display: none;
-            //     }
-            // }
-            
         }
     }
 
@@ -290,36 +338,5 @@
         justify-content: space-between;
     }
 
-    &__item--actual {
-    }
 }
-.item-tabcontent-hero-table {
-
-    &__style {
-    }
-
-    &__tiker {
-    }
-
-    &__range {
-    }
-
-    &__profit {
-    }
-
-    &__stop {
-    }
-
-    &__tp {
-    }
-
-    &__sp {
-    }
-
-    &__risk {
-    }
-}
-.minus {
-}
-.plus {
-}
+// END HERO

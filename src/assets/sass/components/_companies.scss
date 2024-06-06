@@ -1,0 +1,68 @@
+// COMPANIES
+.companies {
+    padding: 127px 40px 54px 40px;
+    @include mobile {
+        padding: 80px 15px 54px 15px;
+    }
+    &__title {
+        max-width: 50%;
+        margin-bottom: 50px;
+        @include desktop-md {
+            max-width: 100%;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        @include desktop-md {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__left {
+        width: 50%;
+        @include desktop-md {
+            width: 100%;
+        }
+    }
+
+    &__paragraph {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    &__right {
+        width: 50%;
+        display: grid;
+        row-gap: 50px;
+        grid-template-columns: repeat(6, 1fr);
+        @include desktop-md {
+            width: 100%;
+        }
+        @include tablet-sm {
+            column-gap: 20px;
+        }
+        @include mobile {
+            row-gap: 20px;
+        }
+    }
+
+    &__pic {
+        grid-column: span 2;
+        justify-self: center;
+        align-self: center;
+        &:nth-child(7) {
+            grid-column: 2 / span 2;
+        }
+        &:nth-child(8) {
+            grid-column: 4 / span 2;
+        }
+    }
+
+}
+
+// END COMPANIES

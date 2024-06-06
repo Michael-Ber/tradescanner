@@ -1,0 +1,131 @@
+.footer {
+    padding: 100px 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 2fr 1fr;
+    gap: 20px;
+    @include desktop-md {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+    @include mobile {
+        padding: 100px 15px 50px 15px;
+    }
+    &__block {
+        padding-top: 20px;
+        font-size: clamp(14px, 3vw, 16px);
+        @include desktop-md {
+            padding-top: 0;
+        }
+    }
+
+    &__block--logo {
+        padding-top: 0;
+    }
+
+    &__block--social {
+        @include adaptive-size('gap', 60, 10, 1920, 1200);
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        flex-wrap: wrap;
+        padding-top: 14px;
+        @include desktop-md {
+            gap: 10px;
+            justify-self: flex-end;
+            justify-content: center;
+            padding-top: 0;
+        }
+        
+    }
+
+    &__block--links {
+        @include desktop-md {
+            justify-self: flex-end;
+        }
+    }
+
+    &__block--nav, &__block--links {
+        @include desktop-md {
+            grid-row: 2/span 1;
+        }
+    }
+    &__block--nav {
+        @include tablet-sm {
+            grid-column: 1/span 2;
+        }
+    }
+
+    &__block--links {
+        @include tablet-sm {
+            grid-row: 3/span 1;
+            grid-column: 1/span 2;
+            justify-self: flex-start;
+        }
+    }
+
+    &__logo {
+        display: block;
+    }
+
+    &__nav {
+        display: flex;
+    }
+
+    &__rights {
+        display: flex;
+        flex-direction: column;
+        font-family: "OpenSans-Regular", sans-serif;
+        font-weight: 400;
+        gap: 15px;
+        margin-top: -40px;
+        @include desktop-md {
+            grid-row: 3/span 1;
+            grid-column: 1/span 2;
+            margin-top: 0;
+            flex-direction: row;
+            justify-content: center;
+        }
+        @include tablet-sm {
+            grid-row: 4/span 1;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 38px;
+    }
+
+    &__nav-item {
+        line-height: 143%;
+    }
+
+    &__list {
+        font-family: 'OpenSans-Regular', sans-serif;
+        font-weight: 400;
+        line-height: 143%;
+        @include desktop-md {
+            text-align: right;
+        }
+        @include tablet-sm {
+            text-align: left;
+        }
+    }
+
+    &__item {
+        transition: .3s color ease-in-out;
+        &:not(:last-child) {
+            margin-bottom: 38px;
+        }
+        &:hover {
+            color: $blue-900;
+        }
+    }
+
+    &__label {
+        font-size: clamp(14px, 3vw, 16px);
+    }
+
+}
