@@ -388,7 +388,6 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(24, 24, 24, 0.5); }
 
 .hero-table__tabcontent {
-  display: none;
   width: 96%;
   padding: 28px 45px 42px 33px; }
 

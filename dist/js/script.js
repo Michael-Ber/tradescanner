@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_burger_js__WEBPACK_IMPORTED_MODULE_0__.burger)();
-  (0,_table_js__WEBPACK_IMPORTED_MODULE_1__.table)();
+  // table();   
 });
 })();
 
