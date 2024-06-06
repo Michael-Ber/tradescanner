@@ -399,6 +399,140 @@ h1, h2, h3, h4, h5, h6 {
       font-size: 14px;
       width: 75%; } }
 
+.hero-table__popup {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out; }
+  .hero-table__popup--registered > .tabcontent-hero-table__popup-wrapper {
+    padding: 22px 27px; }
+  .hero-table__popup .register {
+    display: block;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5px 10px;
+    background: #3d9ae3;
+    color: #ffffff;
+    border-radius: 30px;
+    transition: .3s background ease-in-out; }
+    .hero-table__popup .register:hover {
+      background: #1765a3; }
+  .hero-table__popup .link {
+    color: #40acff;
+    font-size: 12px; }
+
+.hero-table__popup-wrapper {
+  position: absolute;
+  padding: 22px 16px;
+  width: 375px;
+  max-height: 400px;
+  background: #000000;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  border-radius: 30px;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-y: auto;
+  box-shadow: 0 0 10px 0 #40acff; }
+  .hero-table__popup-wrapper::-webkit-scrollbar {
+    width: 3px; }
+  .hero-table__popup-wrapper::-webkit-scrollbar-thumb {
+    background: #40acff; }
+  .hero-table__popup-wrapper::-webkit-scrollbar-track {
+    background: #000000;
+    border-radius: 10px;
+    margin: 30px 0; }
+  .hero-table__popup-wrapper::-webkit-scrollbar-track-piece {
+    height: 100px; }
+  @media (max-width: 575px) {
+    .hero-table__popup-wrapper {
+      width: 280px; } }
+
+.hero-table__popup-content {
+  margin: 0;
+  margin-bottom: 20px; }
+
+.hero-table__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; }
+
+.hero-table__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  padding-left: 25px; }
+  .hero-table__label span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: #ffffff;
+    border-radius: 2px; }
+  .hero-table__label > .tabcontent-hero-table__input:checked + span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: #40acff; }
+
+.hero-table__input {
+  appearance: none; }
+
+.hero-table__btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 43px;
+  width: 100%; }
+
+.hero-table__btn {
+  color: #ffffff;
+  transition: .3s background ease-in-out;
+  padding: 10px 30px; }
+  .hero-table__btn--reset {
+    border: 1px solid #e4e4e4;
+    border-radius: 2px; }
+    .hero-table__btn--reset:hover {
+      background: rgba(255, 255, 255, 0.2); }
+  .hero-table__btn--save {
+    background: #40acff;
+    border-radius: 2px; }
+    .hero-table__btn--save:hover {
+      background: #007bd9; }
+
+.hero-table__info {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 11px 19px;
+  font-weight: 700;
+  font-size: 14px;
+  background: #262424;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
+  transition: .3s opacity ease-in-out, .3s visibility ease-in-out; }
+
 .hero-table-top__list {
   display: flex;
   justify-content: center;
@@ -497,12 +631,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 26px 0;
     height: 70px;
     font-weight: 400;
-    font-size: clamp(12px, 1vw, 16px); }
+    font-size: clamp(12px, 1vw, 16px);
+    transition: .3s color ease-in-out;
+    cursor: pointer; }
     .tabcontent-hero-table__head-th:first-child {
       border-radius: 30px 0 0 30px; }
     .tabcontent-hero-table__head-th:last-child {
       border-radius: 0 30px 30px 0;
       padding-right: 20px; }
+    .tabcontent-hero-table__head-th .table-btn {
+      transition: .3s color ease-in-out;
+      color: #ffffff; }
+      .tabcontent-hero-table__head-th .table-btn:hover {
+        color: #40acff; }
   .tabcontent-hero-table__body-tr {
     position: relative; }
     .tabcontent-hero-table__body-tr:not(:last-child)::after {

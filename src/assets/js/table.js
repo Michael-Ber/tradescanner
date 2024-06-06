@@ -12,9 +12,9 @@ export const table = () => {
             if(btn.classList.contains('hero-table__tabitem--active')) {
                 if(window.innerWidth < 992) {
                     document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
-                    document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
+                    // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
                 }else {
-                    document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
+                    // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
                     document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
                 }
             }
@@ -36,9 +36,9 @@ export const table = () => {
         tabBtns.forEach(btn => {
             btn.classList.remove('hero-table__tabitem--active')
         })
-        tabContents.forEach(content => {
-            content.style.display = 'none';
-        })
+        // tabContents.forEach(content => {
+        //     content.style.display = 'none';
+        // })
         tabMobileContents.forEach(content => {
             content.style.display = 'none';
         })

@@ -67,6 +67,79 @@ const burger = () => {
 
 /***/ }),
 
+/***/ "./src/assets/js/popup.js":
+/*!********************************!*\
+  !*** ./src/assets/js/popup.js ***!
+  \********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   popup: () => (/* binding */ popup)
+/* harmony export */ });
+const popup = () => {
+  try {
+    const btns = document.querySelectorAll('[data-popup]');
+    const popups = document.querySelectorAll('.hero-table__popup');
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        closeAll();
+        document.querySelector(`[data-popup-content = ${btn.getAttribute('data-popup')}]`).classList.toggle('hidden');
+      });
+    });
+    window.addEventListener('click', e => {
+      if (e.target.classList.contains('hero-table__popup')) {
+        closeAll();
+      }
+    });
+    function closeAll() {
+      popups.forEach(popup => {
+        popup.classList.add('hidden');
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
+/***/ "./src/assets/js/popupForm.js":
+/*!************************************!*\
+  !*** ./src/assets/js/popupForm.js ***!
+  \************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   popupForm: () => (/* binding */ popupForm)
+/* harmony export */ });
+const popupForm = () => {
+  try {
+    const form = document.querySelector('.hero-table__form');
+    const inputs = form.querySelectorAll('.hero-table__input');
+    const resetBtn = form.querySelector('.hero-table__btn--reset');
+    const infoBlock = document.querySelector('.hero-table__info');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      infoBlock.classList.remove('hidden');
+      setTimeout(() => {
+        infoBlock.classList.add('hidden');
+      }, 2000);
+    });
+    resetBtn.addEventListener('click', () => {
+      inputs.forEach(input => {
+        input.value = '';
+        input.checked = false;
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/***/ }),
+
 /***/ "./src/assets/js/table.js":
 /*!********************************!*\
   !*** ./src/assets/js/table.js ***!
@@ -88,9 +161,9 @@ const table = () => {
       if (btn.classList.contains('hero-table__tabitem--active')) {
         if (window.innerWidth < 992) {
           document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
-          document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
+          // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
         } else {
-          document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
+          // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
           document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
         }
       }
@@ -110,9 +183,9 @@ const table = () => {
     tabBtns.forEach(btn => {
       btn.classList.remove('hero-table__tabitem--active');
     });
-    tabContents.forEach(content => {
-      content.style.display = 'none';
-    });
+    // tabContents.forEach(content => {
+    //     content.style.display = 'none';
+    // })
     tabMobileContents.forEach(content => {
       content.style.display = 'none';
     });
@@ -186,11 +259,17 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./burger.js */ "./src/assets/js/burger.js");
 /* harmony import */ var _table_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./table.js */ "./src/assets/js/table.js");
+/* harmony import */ var _popup_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./popup.js */ "./src/assets/js/popup.js");
+/* harmony import */ var _popupForm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./popupForm.js */ "./src/assets/js/popupForm.js");
+
+
 
 
 window.addEventListener('DOMContentLoaded', () => {
   (0,_burger_js__WEBPACK_IMPORTED_MODULE_0__.burger)();
-  // table();   
+  (0,_table_js__WEBPACK_IMPORTED_MODULE_1__.table)();
+  (0,_popup_js__WEBPACK_IMPORTED_MODULE_2__.popup)();
+  (0,_popupForm_js__WEBPACK_IMPORTED_MODULE_3__.popupForm)();
 });
 })();
 

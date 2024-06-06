@@ -155,6 +155,161 @@
             width: 75%;
         }
     }
+    &__popup {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        
+        z-index: 9;
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        
+        &--registered {
+            & > .tabcontent-hero-table__popup-wrapper {
+                padding: 22px 27px;
+            }
+        }
+        .register {
+            display: block;
+            width: 60%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 5px 10px;
+            background: $blue-800;
+            color: $white;
+            border-radius: 30px;
+            transition: .3s background ease-in-out;
+            &:hover {
+                background: darken($blue-800, 20%);
+            }
+        }
+        .link {
+            color: $blue-900;
+            font-size: 12px;
+        }
+    }
+    &__popup-wrapper {
+        position: absolute;
+        padding: 22px 16px;
+        width: 375px;
+        max-height: 400px;
+        background: $black;
+        color: $white;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 143%;
+        border-radius: 30px;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow-y: auto;
+        box-shadow: 0 0 10px 0 $blue-900;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $blue-900;
+        }
+        &::-webkit-scrollbar-track {
+            background: $black;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        &::-webkit-scrollbar-track-piece {
+            height: 100px;
+        }
+        @include mobile {
+            width: 280px;
+        }
+    }
+    &__popup-content {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    &__label {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        padding-left: 25px;
+        span {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background: $white;
+                border-radius: 2px;
+            }
+        }
+        & > .tabcontent-hero-table__input:checked + span::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 3px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: $blue-900;
+        }
+    }
+    &__input {
+        appearance: none;
+    }
+    &__btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        min-height: 43px;
+        width: 100%;
+    }
+    &__btn {
+        color: $white;
+        transition: .3s background ease-in-out;
+        padding: 10px 30px;
+        &--reset {
+            border: 1px solid $white-100;
+            border-radius: 2px;
+            &:hover {
+                background: rgba($white, .2);
+            }
+        }
+        &--save {
+            background: $blue-900;
+            border-radius: 2px;
+            &:hover {
+                background: darken($blue-900, 20%);
+            }
+        }
+    }
+    &__info {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 11px 19px;
+        font-weight: 700;
+        font-size: 14px;
+        background: $gray;
+        border-radius: 2px;
+        border: 1px solid $white;
+        transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+    }
 }
 
 .hero-table-top {
@@ -275,12 +430,22 @@
         height: 70px;
         font-weight: 400;
         font-size: clamp(12px, 1vw, 16px);
+        transition: .3s color ease-in-out;
+        cursor: pointer;
+        
         &:first-child {
             border-radius: 30px 0 0 30px;
         }
         &:last-child {
             border-radius: 0 30px 30px 0;
             padding-right: 20px;
+        }
+        .table-btn {
+            transition: .3s color ease-in-out;
+            color: $white;
+            &:hover {
+                color: $blue-900;
+            }
         }
     
     }
