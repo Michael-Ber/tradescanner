@@ -4,7 +4,11 @@ export const table = () => {
     const table = document.querySelector('.tabcontent-hero-table__body');
     const search = document.querySelector('.tabcontent-hero-table__search');
     
-
+    window.addEventListener('resize', () => {
+        if(window.innerWidth >= 992) {
+            tabSwitch();
+        }
+    })
     tabSwitch();
     function tabSwitch() {
         tabBtns.forEach(btn => {
