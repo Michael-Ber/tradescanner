@@ -1,13 +1,15 @@
 export const table = () => {
     const tabBtns = document.querySelectorAll('.hero-table__tabitem');
     const tabMobileContents = document.querySelectorAll('.hero-table__mobile-content');
-
+    const table = document.querySelector('.tabcontent-hero-table__body');
+    const search = document.querySelector('.tabcontent-hero-table__search');
     
 
     window.addEventListener('resize', tabSwitch);
     tabSwitch();
     function tabSwitch() {
         tabBtns.forEach(btn => {
+            removeActive();
             tabBtns[0].classList.add('hero-table__tabitem--active')
             
             if(btn.classList.contains('hero-table__tabitem--active')) {
@@ -30,6 +32,13 @@ export const table = () => {
                     // Переключение в десктопной таблице
                     removeActive();
                     btn.classList.add('hero-table__tabitem--active');
+                    if(btn.getAttribute('data-tabBtn') === 'search') {
+                        table.style.display = 'none';
+                        document.querySelector(`[data-tabContent=${btn.getAttribute('data-tabBtn')}]`).style.display = 'block';
+                    }else {
+                        table.style.display = 'block';
+                        search.style.display = 'none'
+                    }
                 }
                 
             })

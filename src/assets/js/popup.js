@@ -61,7 +61,20 @@ export const popup = () => {
         }
 
         cookiesPopup()
-        
+
+        function timePopup() {
+            const btns = document.querySelectorAll('.popup-time-btn');
+
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.nextElementSibling.classList.remove('hidden');
+                    setTimeout(() => {
+                        btn.nextElementSibling.classList.add('hidden');
+                    }, 2000)
+                })
+            })
+        }    
+        timePopup()    
     } catch (error) {
         console.log(error)
     }

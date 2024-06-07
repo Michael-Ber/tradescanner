@@ -1,7 +1,7 @@
 export const copyToBuffer = () => {
     try {
-        const data = document.querySelectorAll('.tabcontent-hero-table__body-td');
-        const dataMobile = document.querySelectorAll('.table-mobile-content__col');
+        const data = document.querySelectorAll('.buffer');
+        const dataMobile = document.querySelectorAll('.mobile-buffer');
         const infoBlock = document.querySelector('.hero-table__info');
         data.forEach(str => {
             str.addEventListener('click', () => {

@@ -9707,8 +9707,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const copyToBuffer = () => {
   try {
-    const data = document.querySelectorAll('.tabcontent-hero-table__body-td');
-    const dataMobile = document.querySelectorAll('.table-mobile-content__col');
+    const data = document.querySelectorAll('.buffer');
+    const dataMobile = document.querySelectorAll('.mobile-buffer');
     const infoBlock = document.querySelector('.hero-table__info');
     data.forEach(str => {
       str.addEventListener('click', () => {
@@ -9803,6 +9803,18 @@ const popup = () => {
       });
     }
     cookiesPopup();
+    function timePopup() {
+      const btns = document.querySelectorAll('.popup-time-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btn.nextElementSibling.classList.remove('hidden');
+          setTimeout(() => {
+            btn.nextElementSibling.classList.add('hidden');
+          }, 2000);
+        });
+      });
+    }
+    timePopup();
   } catch (error) {
     console.log(error);
   }
@@ -9855,10 +9867,13 @@ __webpack_require__.r(__webpack_exports__);
 const table = () => {
   const tabBtns = document.querySelectorAll('.hero-table__tabitem');
   const tabMobileContents = document.querySelectorAll('.hero-table__mobile-content');
+  const table = document.querySelector('.tabcontent-hero-table__body');
+  const search = document.querySelector('.tabcontent-hero-table__search');
   window.addEventListener('resize', tabSwitch);
   tabSwitch();
   function tabSwitch() {
     tabBtns.forEach(btn => {
+      removeActive();
       tabBtns[0].classList.add('hero-table__tabitem--active');
       if (btn.classList.contains('hero-table__tabitem--active')) {
         if (window.innerWidth < 992) {} else {
@@ -9879,6 +9894,13 @@ const table = () => {
           // Переключение в десктопной таблице
           removeActive();
           btn.classList.add('hero-table__tabitem--active');
+          if (btn.getAttribute('data-tabBtn') === 'search') {
+            table.style.display = 'none';
+            document.querySelector(`[data-tabContent=${btn.getAttribute('data-tabBtn')}]`).style.display = 'block';
+          } else {
+            table.style.display = 'block';
+            search.style.display = 'none';
+          }
         }
       });
     });

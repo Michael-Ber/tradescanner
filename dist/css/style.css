@@ -260,16 +260,6 @@ h1, h2, h3, h4, h5, h6 {
   .header-user__svg path {
     transition: .3s fill ease-in-out; }
 
-.header-user__login {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 80%;
-  color: #ffffff;
-  transition: .3s color ease-in-out; }
-  @media (max-width: 991px) {
-    .header-user__login {
-      display: none; } }
-
 .burger {
   display: none; }
   @media (max-width: 991px) {
@@ -401,6 +391,9 @@ h1, h2, h3, h4, h5, h6 {
   top: -70%;
   left: 0;
   z-index: -1; }
+  @media (max-width: 991px) {
+    .hero__circle {
+      top: -120%; } }
   @media (max-width: 575px) {
     .hero__circle {
       width: 100%; } }
@@ -434,14 +427,16 @@ h1, h2, h3, h4, h5, h6 {
       display: block; } }
 
 .hero-table__tabs-btns {
+  width: calc((105 / (1880 - 992) * ((100vw - 992px)) + 273px));
   display: flex;
   flex-direction: column;
   margin-top: 92px;
   flex-shrink: 0; }
   @media (max-width: 991px) {
     .hero-table__tabs-btns {
+      width: 100%;
+      max-width: 535px;
       align-items: center;
-      max-width: 495px;
       margin: 0 auto; } }
   @media (max-width: 575px) {
     .hero-table__tabs-btns {
@@ -459,7 +454,7 @@ h1, h2, h3, h4, h5, h6 {
   align-self: flex-start;
   border-radius: 30px 0 0 30px;
   min-height: 73px;
-  padding: 13px 47px;
+  padding: 13px 13px;
   flex-shrink: 0;
   transition: .3s background ease; }
   @media (max-width: 1199px) {
@@ -492,6 +487,13 @@ h1, h2, h3, h4, h5, h6 {
     .hero-table__mobile-content {
       font-size: 14px;
       width: 75%; } }
+
+.hero-table__mobile-content-search {
+  width: 100%;
+  padding: 0 20px; }
+  @media (max-width: 575px) {
+    .hero-table__mobile-content-search {
+      padding: 0; } }
 
 .hero-table__popup {
   position: absolute;
@@ -663,22 +665,16 @@ h1, h2, h3, h4, h5, h6 {
 .hero-table-tabitem__wrapper {
   display: flex;
   align-items: center;
-  gap: 15px; }
+  gap: 8px; }
   @media (max-width: 1199px) {
     .hero-table-tabitem__wrapper {
       gap: 10px; } }
-  @media (max-width: 1023px) {
-    .hero-table-tabitem__wrapper {
-      flex-direction: column; } }
-  @media (max-width: 991px) {
-    .hero-table-tabitem__wrapper {
-      flex-direction: row; } }
   @media (max-width: 575px) {
     .hero-table-tabitem__wrapper {
       gap: 10px; } }
 
 .crypto-name {
-  font-size: clamp(15px, 1.5vw, 20px);
+  font-size: clamp(15px, 1.2vw, 20px);
   line-height: 100%;
   font-weight: 400; }
 
@@ -686,8 +682,8 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
-  padding: 8px 14px;
+  gap: 10px;
+  padding: 8px 6px;
   background: rgba(14, 2, 13, 0.3);
   border-radius: 100px;
   min-height: 39px; }
@@ -750,6 +746,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .table-mobile-content__col-svg:hover path {
   fill: currentColor; }
+
+.table-mobile-content__search-input {
+  padding: 10px 20px;
+  width: 100%; }
+  .table-mobile-content__search-input::placeholder {
+    font-size: 12px; }
 
 .tabcontent-hero-table__head {
   background: rgba(119, 119, 119, 0.3);
@@ -836,12 +838,16 @@ h1, h2, h3, h4, h5, h6 {
   height: 70px;
   font-weight: 400; }
   .tabcontent-hero-table__body-td:hover {
-    text-decoration: underline; }
+    font-weight: 700; }
   .tabcontent-hero-table__body-td span:hover {
-    text-decoration: underline; }
+    font-weight: 700; }
 
 .tabcontent-hero-table .two-digits:hover {
-  text-decoration: none; }
+  font-weight: 400; }
+
+.tabcontent-hero-table__body-td-time {
+  position: relative;
+  cursor: pointer; }
 
 .tabcontent-hero-table__body-svg path {
   transition: .3s fill ease-in-out; }
@@ -852,6 +858,35 @@ h1, h2, h3, h4, h5, h6 {
 .tabcontent-hero-table__item {
   display: flex;
   justify-content: space-between; }
+
+.tabcontent-hero-table__search {
+  display: none; }
+
+.tabcontent-hero-table__search-input {
+  width: 100%;
+  padding: 25px; }
+
+.mobile-time {
+  position: relative; }
+
+.popup-time {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% + 20px);
+  width: 150px;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 10px;
+  background: #333333;
+  border-radius: 30px; }
+  @media (max-width: 575px) {
+    .popup-time {
+      width: 120px;
+      left: calc(100% + 5px); } }
+
+.popup-time-btn {
+  color: currentColor; }
 
 .tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg path {
   stroke: currentColor; }

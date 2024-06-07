@@ -58,6 +58,9 @@
         top: -70%;
         left: 0;
         z-index: -1;
+        @include tablet {
+            top: -120%;
+        }
         @include mobile {
             width: 100%;
         }
@@ -98,13 +101,15 @@
     }
 
     &__tabs-btns {
+        @include adaptive-size('width', 378, 273, 1880, 992);
         display: flex;
         flex-direction: column;
         margin-top: 92px;
         flex-shrink: 0;
         @include tablet {
+            width: 100%;
+            max-width: 535px;
             align-items: center;
-            max-width: 495px;
             margin: 0 auto;
         }
         @include mobile {
@@ -126,7 +131,7 @@
         align-self: flex-start;
         border-radius: 30px 0 0 30px;
         min-height: 73px;
-        padding: 13px 47px;
+        padding: 13px 13px;
         flex-shrink: 0;
         transition: .3s background ease;
         @include desktop-md {
@@ -163,6 +168,14 @@
         @include mobile {
             font-size: 14px;
             width: 75%;
+        }
+    }
+
+    &__mobile-content-search {
+        width: 100%;
+        padding: 0 20px;
+        @include mobile {
+            padding: 0;
         }
     }
     &__popup {
@@ -361,15 +374,9 @@
     &__wrapper {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 8px;
         @include desktop-md {
             gap: 10px;
-        }
-        @include desktop-sm {
-            flex-direction: column;
-        }
-        @include tablet {
-            flex-direction: row;
         }
         @include mobile {
             gap: 10px;
@@ -377,7 +384,7 @@
     }
 }
 .crypto-name {
-    font-size: clamp(15px, 1.5vw, 20px);
+    font-size: clamp(15px, 1.2vw, 20px);
     line-height: 100%;
     font-weight: 400;
 }
@@ -385,8 +392,8 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 8px 14px;
+    gap: 10px;
+    padding: 8px 6px;
     background: $deals-bg;
     border-radius: 100px;
     min-height: 39px;
@@ -460,6 +467,13 @@
             path {
                 fill: currentColor;
             }
+        }
+    }
+    &__search-input {
+        padding: 10px 20px;
+        width: 100%;
+        &::placeholder {
+            font-size: 12px;
         }
     }
 }
@@ -565,19 +579,24 @@
         height: 70px;
         font-weight: 400;
         &:hover {
-            text-decoration: underline;
+            font-weight: 700;
         }
         
         span {
             &:hover {
-                text-decoration: underline;
+                font-weight: 700;
             }
         }
     }
     .two-digits {
         &:hover {
-            text-decoration: none;
+            font-weight: 400;
         }
+    }
+
+    &__body-td-time {
+        position: relative;
+        cursor: pointer;
     }
     &__body-svg {
         path {
@@ -596,6 +615,38 @@
         justify-content: space-between;
     }
 
+    &__search {
+        display: none;
+    }
+    &__search-input {
+        width: 100%;
+        padding: 25px;
+    }
+
+}
+
+.mobile-time {
+    position: relative;
+}
+
+.popup-time {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 20px);
+    width: 150px;
+    font-weight: 400;
+    color: $white;
+    padding: 10px;
+    background: $gray-100;
+    border-radius: 30px;
+    @include mobile {
+        width: 120px;
+        left: calc(100% + 5px);
+    }
+}
+.popup-time-btn {
+    color: currentColor;
 }
 
 .tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg {

@@ -133,16 +133,6 @@
         }
     }
 
-    &__login {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 80%;
-        color: $white;
-        transition: .3s color ease-in-out;
-        @include tablet {
-            display: none;
-        }
-    }
 }
 
 .burger {
