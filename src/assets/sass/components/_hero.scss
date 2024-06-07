@@ -12,7 +12,7 @@
         font-size: clamp(32px, 4vw, 64px);
         line-height: 109%;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         max-width: 70%;
         @include tablet {
             max-width: 100%;
@@ -21,11 +21,15 @@
 
     &__subtitle {
         font-size: clamp(20px, 4vw, 64px);
-        line-height: 125%;
+        line-height: 109%;
         font-weight: 300;
         max-width: 60%;
-        @include tablet {
+        @include tablet-sm {
             max-width: 100%;
+        }
+        @include mobile {
+            line-height: 125%;
+            max-width: 88%;
         }
     }
 
@@ -97,6 +101,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 92px;
+        flex-shrink: 0;
         @include tablet {
             align-items: center;
             max-width: 495px;
@@ -109,6 +114,7 @@
 
     &__tabs-contents {
         flex-grow: 1;
+
         @include tablet {
             display: none;
         }
@@ -124,13 +130,16 @@
         flex-shrink: 0;
         transition: .3s background ease;
         @include desktop-md {
-            padding: 13px 20px;
+            padding: 13px 10px;
         }
         @include tablet {
             width: unset;
             min-height: 48px;
             border-radius: 30px;
             padding: 5px 20px;
+        }
+        @include mobile {
+            padding: 5px 5px;
         }
         &:hover {
             background: $tabitem-bg;
@@ -139,12 +148,13 @@
 
     &__tabitem--active {
         background: $tabitem-bg;
+        .crypto-deals__today {
+            display: block;
+        }
     }
 
     &__tabcontent {
-        // display: none;
-        width: 96%;
-        padding: 28px 45px 42px 33px;
+        width: 100%;
     }
 
     &__mobile-content {
@@ -177,7 +187,7 @@
             padding: 5px 10px;
             background: $blue-800;
             color: $white;
-            border-radius: 30px;
+            border-radius: 2px;
             transition: .3s background ease-in-out;
             &:hover {
                 background: darken($blue-800, 20%);
@@ -192,32 +202,16 @@
         position: absolute;
         padding: 22px 16px;
         width: 375px;
-        max-height: 400px;
         background: $black;
         color: $white;
         font-weight: 400;
         font-size: 14px;
         line-height: 143%;
         border-radius: 30px;
-        top: 200px;
+        top: 50px;
         left: 50%;
         transform: translateX(-50%);
-        overflow-y: auto;
         box-shadow: 0 0 10px 0 $blue-900;
-        &::-webkit-scrollbar {
-            width: 3px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: $blue-900;
-        }
-        &::-webkit-scrollbar-track {
-            background: $black;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-        &::-webkit-scrollbar-track-piece {
-            height: 100px;
-        }
         @include mobile {
             width: 280px;
         }
@@ -241,7 +235,9 @@
         font-size: 14px;
         line-height: 140%;
         padding-left: 25px;
+        cursor: pointer;
         span {
+            margin-right: 20px;
             &::before {
                 content: '';
                 position: absolute;
@@ -255,7 +251,7 @@
                 border-radius: 2px;
             }
         }
-        & > .tabcontent-hero-table__input:checked + span::after {
+        & > .hero-table__input:checked + span::after {
             content: '';
             position: absolute;
             top: 50%;
@@ -270,6 +266,7 @@
     }
     &__input {
         appearance: none;
+        
     }
     &__btns {
         display: flex;
@@ -309,6 +306,15 @@
         border-radius: 2px;
         border: 1px solid $white;
         transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+        z-index: 9;
+    }
+
+    &__popup-close {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -30px;
+        cursor: pointer;
     }
 }
 
@@ -343,6 +349,18 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        @include desktop-md {
+            gap: 10px;
+        }
+        @include desktop-sm {
+            flex-direction: column;
+        }
+        @include tablet {
+            flex-direction: row;
+        }
+        @include mobile {
+            gap: 10px;
+        }
     }
 }
 .crypto-name {
@@ -366,10 +384,16 @@
     }
 
     &__today {
+        display: none;
         font-size: clamp(13px, 1vw, 16px);
         font-weight: 400;
         line-height: 100%;
     }
+    @include desktop-md {
+        gap: 5px;
+        padding: 8px 10px;
+    }
+    
     @include tablet {
         background: none;
     }
@@ -413,19 +437,32 @@
     }
 }
 .tabcontent-hero-table {
-    border-collapse: collapse;
-
     &__head {
         background: $table-header-bg;
+        padding: 0 20px;
+        border-radius: 30px;
+        margin-bottom: 22px;
         .empty {
             background: transparent;
             height: 22px;
             width: 100%;
         }
     }
-
+    &__head--fixed {
+        position: fixed;
+        top: 0;
+        z-index: 9;
+        background: $gray-100;
+        border-radius: 0;
+        
+    }
+    &__head-tr {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr 1fr 1.7fr 1.7fr 1.2fr 1fr 1.2fr 1.5fr;
+    }
     &__head-th {
-        position: relative;
+        justify-self: center;
+        text-align: center;
         padding: 26px 0;
         height: 70px;
         font-weight: 400;
@@ -433,13 +470,6 @@
         transition: .3s color ease-in-out;
         cursor: pointer;
         
-        &:first-child {
-            border-radius: 30px 0 0 30px;
-        }
-        &:last-child {
-            border-radius: 0 30px 30px 0;
-            padding-right: 20px;
-        }
         .table-btn {
             transition: .3s color ease-in-out;
             color: $white;
@@ -450,8 +480,32 @@
     
     }
 
+    &__calendar {
+        background: transparent;
+        border: none;
+        color: $white;
+        cursor: pointer;
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
+    }
+
+    &__body {
+        padding: 0 20px;
+    }
+
     &__body-tr {
+        display: grid;
+        grid-template-columns: 1.2fr 1.2fr 1fr 1.7fr 1.7fr 1.2fr 1fr 1.2fr 1.5fr;
+        background: $tabitem-bg;
+        margin: 0 -20px;
+        padding: 0 20px;
         position: relative;
+        transition: .3s background ease-in-out;
+        @include desktop-md {
+            grid-template-columns: 1.6fr 1.2fr 1fr 1.7fr 1.7fr 1.2fr 1fr 1.2fr 1.5fr;
+        }
         &:not(:last-child) {
             &::after {
                 content: "";
@@ -459,42 +513,45 @@
                 position: absolute;
                 bottom: 0;
                 left: 50%;
-                width: 92%;
+                width: 95%;
                 transform: translateX(-50%);
                 height: 1px;
                 background: $table-border;
             }
         }
-        &:first-child {
-            .tabcontent-hero-table__body-td {
-                &:last-child {
-                    border-radius: 0 30px 0 0;
-                }
-            }
-        }
         &:last-child {
-            .tabcontent-hero-table__body-td {
-                &:first-child {
-                    border-radius: 0 0 0 30px;
-                }
-                &:last-child {
-                    border-radius: 0 0 30px 0;
-                }
-            }
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
-        
-        &--actual {
+        &:hover {
             background: $tabitem-actual-bg;
         }
     }
 
 
     &__body-td {
-        background: $tabitem-bg;
+        width: fit-content;
+        justify-self: center;
         text-align: center;
         padding: 26px 0;
         font-size: clamp(12px, 1vw, 16px);
         height: 70px;
+        font-weight: 400;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__body-svg {
+        path {
+            transition: .3s fill ease-in-out;
+        }
+        &:hover {
+            path {
+                fill: currentColor;
+            }
+        }
     }
 
 
@@ -503,5 +560,11 @@
         justify-content: space-between;
     }
 
+}
+
+.tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg {
+    path {
+        stroke: currentColor;
+    }
 }
 // END HERO

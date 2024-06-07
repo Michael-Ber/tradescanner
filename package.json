@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "css-loader": "^6.10.0",
+    "gsap": "^3.12.5",
     "less-loader": "^12.2.0",
     "normalize.css": "^8.0.1",
     "sass-loader": "^14.1.1",

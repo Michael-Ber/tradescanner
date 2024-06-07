@@ -14,26 +14,41 @@
 <header class="header">
     <a href="index.html" class="header__logo logo">
         <picture>
-          <source srcset="/assets/img/logo.svg" media="(min-width: 1200px)">
-          <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
-          <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+          <source srcset="./assets/img/logo.svg" media="(min-width: 1200px)">
+          <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
+          <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
         </picture>
         
     </a>
     <nav class="nav" title="Меню навигации">
       <ul class="list-reset nav__list">
-        <li class="nav__item nav__item--active"><a href="#" class="nav__link">О сканере</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Риск менеджмент</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Как пользоваться</a></li>
+        <li class="nav__item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+        <li class="nav__item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+        <li class="nav__item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
       </ul>
     </nav>
     
     <div class="header__account">
         <a href="#" class="telegram">
-            <img loading="lazy" src="/assets/img/telegram.svg" class="telegram__svg" width="39" height="39" alt="Телеграм">
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="telegram__svg" >
+              <g clip-path="url(#clip0_0_112)">
+              <path d="M19.5 39C30.2696 39 39 30.2696 39 19.5C39 8.73045 30.2696 0 19.5 0C8.73045 0 0 8.73045 0 19.5C0 30.2696 8.73045 39 19.5 39Z" fill="#59AAE7"/>
+              <path d="M19.5001 0C18.638 0 17.7892 0.0566719 16.9566 0.165064C26.5243 1.41146 33.9131 9.59255 33.9131 19.5C33.9131 29.4074 26.5243 37.5885 16.9565 38.8349C17.7892 38.9433 18.638 39 19.5001 39C30.2696 39 39.0001 30.2695 39.0001 19.5C39.0001 8.73052 30.2696 0 19.5001 0Z" fill="#3D9AE3"/>
+              <path d="M12.5447 23.7003L6.25577 20.5558C6.08339 20.4696 6.08171 20.2243 6.25287 20.1357L30.145 7.77763C30.3205 7.68684 30.5231 7.83941 30.4844 8.03319L26.3709 28.6009C26.3415 28.7477 26.1845 28.8302 26.0469 28.7713L20.4564 26.3755C20.3895 26.3467 20.3129 26.3506 20.2491 26.386L13.0251 30.3994C12.868 30.4866 12.6749 30.3731 12.6749 30.1933V23.9111C12.675 23.8218 12.6246 23.7402 12.5447 23.7003Z" fill="#FCFCFC"/>
+              <path d="M15.2581 25.8198L15.219 19.5411C15.2188 19.5009 15.2396 19.4635 15.2738 19.4426L25.4732 13.2119C25.5888 13.1413 25.7098 13.2944 25.6142 13.3905L17.8523 21.2076C17.8438 21.2162 17.8366 21.2261 17.8312 21.237L16.5035 23.8922L15.4745 25.8718C15.4193 25.9781 15.2588 25.9394 15.2581 25.8198Z" fill="#D8D7DA"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_0_112">
+              <rect width="39" height="39" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
         </a>
         <button class="btn-reset header__user header-user">
-            <img loading="lazy" src="/assets/img/user.svg" class="header-user__svg" width="28" height="28" alt="Пользователь">
+            <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-user__svg">
+              <path d="M11.9992 13.406C13.7857 13.406 15.287 12.5313 16.341 10.8764C17.184 9.55287 17.6674 7.81173 17.6674 6.09935C17.6674 2.97741 15.1247 0.4375 11.9992 0.4375C8.87461 0.4375 6.33252 2.97741 6.33252 6.09935C6.33252 7.74451 6.81186 9.50387 7.61472 10.8056C8.66407 12.5068 10.1802 13.406 11.9992 13.406Z" fill="white"/>
+              <path d="M17.3744 14.4639H6.6256C3.30071 14.4639 0.595703 16.9933 0.595703 20.1025V27.5626H23.4043V20.1025C23.4043 16.9934 20.6993 14.4639 17.3744 14.4639Z" fill="white"/>
+            </svg>
             <span class="header-user__login">Вход</span>
         </button>
         <div class="header__popup header-popup hidden">
@@ -67,7 +82,7 @@
             <!-- PAYMENT -->
 <section class="payment">
     <form class="payment__form">
-        <img loading="lazy" src="/assets/img/webp/circle-hero.webp" class="payment__img" width="1197" height="714">
+        <img loading="lazy" src="./assets/img/webp/circle-hero.webp" class="payment__img" width="1197" height="714" alt="Фоновая подсветка">
         <ul class="list-reset payment__list">
             <li class="payment__list-header">
                 <span class="payment__list-title">Доступ на месяц</span>
@@ -79,6 +94,7 @@
                 <div class="payment-item__col">
                     <div class="payment-item__name">РОССИЯ</div>
                     <div class="payment-item__options">свинг + краткосрок + среднесрок + долгосрок</div>
+                    <div class="payment-item__deadline">доступ до <span class="payment-item__deadline-value">02-05-3000</span></div>
                 </div>
                 <div class="payment-item__col">
                     <div class="payment-item__cost">990</div>
@@ -98,6 +114,7 @@
                 <div class="payment-item__col">
                     <div class="payment-item__name">КРИПТО USDT</div>
                     <div class="payment-item__options">свинг + краткосрок + среднесрок + долгосрок</div>
+                    <div class="payment-item__deadline">доступ до <span class="payment-item__deadline-value">02-05-3000</span></div>
                 </div>
                 <div class="payment-item__col">
                     <div class="payment-item__cost">990</div>
@@ -117,6 +134,7 @@
                 <div class="payment-item__col">
                     <div class="payment-item__name">КРИПТО BTC</div>
                     <div class="payment-item__options">свинг + краткосрок + среднесрок + долгосрок</div>
+                    <div class="payment-item__deadline">доступ до <span class="payment-item__deadline-value">02-05-3000</span></div>
                 </div>
                 <div class="payment-item__col">
                     <div class="payment-item__cost">990</div>
@@ -136,6 +154,7 @@
                 <div class="payment-item__col">
                     <div class="payment-item__name">ГОНКОНГ</div>
                     <div class="payment-item__options">свинг + краткосрок + среднесрок + долгосрок</div>
+                    <div class="payment-item__deadline">доступ до <span class="payment-item__deadline-value">02-05-3000</span></div>
                 </div>
                 <div class="payment-item__col">
                     <div class="payment-item__cost">990</div>
@@ -155,6 +174,7 @@
                 <div class="payment-item__col">
                     <div class="payment-item__name">КРИПТО BTC</div>
                     <div class="payment-item__options">свинг + краткосрок + среднесрок + долгосрок</div>
+                    <div class="payment-item__deadline">доступ до <span class="payment-item__deadline-value">02-05-3000</span></div>
                 </div>
                 <div class="payment-item__col">
                     <div class="payment-item__cost">990</div>
@@ -173,7 +193,7 @@
         </ul>
         <div class="payment__bottom">
             <div class="payment__promo-wrapper">
-                <button class="btn-reset payment__promo">Промокод</button>
+                <input type="text" placeholder="Промокод" class="payment__promo" />
             </div>
             <div class="payment__sum">
                 Итого: <div class="payment__sum-val">
@@ -198,7 +218,7 @@
     <div class="cookies">
         tradescanner.ru использует cookie для персонализации сервисов и удобства пользователей. tradescanner.ru серьезно относится к защите персональных данных —  <a href="#">ознакомьтесь с пользовательским соглашением</a>. Вы можете запретить сохранение cookie в настройках своего браузера.
         <button class="btn-reset cookies__close" aria-label="Закрыть окно">
-            <img loading="lazy" src="/assets/img/close.svg" class="cookies__close-svg" width="17" height="17" alt="Закрыть окно">
+            <img loading="lazy" src="./assets/img/close.svg" class="cookies__close-svg" width="17" height="17" alt="Закрыть окно">
         </button>
     </div>
 
@@ -210,18 +230,18 @@
     <div class="footer__block footer__block--logo">
         <a href="#" class="footer__logo logo">
             <picture>
-                <source srcset="/assets/img/logo.svg" media="(min-width: 768px)">
-                <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
-                <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+                <source srcset="./assets/img/logo.svg" media="(min-width: 768px)">
+                <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
+                <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
               </picture>
         </a>
     </div>
     <div class="footer__block footer__block--nav">
         <nav class="nav footer__nav" title="Навигация по сайту">
           <ul class="list-reset nav__list footer__nav-list">
-            <li class="nav__item nav__item--active footer__nav-item"><a href="#" class="nav__link">О сканере</a></li>
-            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Риск менеджмент</a></li>
-            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Как пользоваться</a></li>
+            <li class="nav__item nav__item--active footer__nav-item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
           </ul>
         </nav>
     </div>
@@ -235,7 +255,7 @@
     <div class="footer__block footer__block--social">
         <span class="footer__label">Мы в соц сетях</span>
         <a href="#" class="footer__social-link" aria-label="Телеграм">
-            <img loading="lazy" src="/assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
+            <img loading="lazy" src="./assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
         </a>
     </div>
     <div class="footer__rights">

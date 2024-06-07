@@ -3,6 +3,7 @@ export const popup = () => {
         function heroPopup() {
             const btns = document.querySelectorAll('[data-popup]');
             const popups = document.querySelectorAll('.hero-table__popup');
+            const closeBtns = document.querySelectorAll('.hero-table__popup-close');
     
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -16,6 +17,10 @@ export const popup = () => {
                     closeAll()
                 }
             })
+
+            closeBtns.forEach(btn => {
+                btn.addEventListener('click', closeAll);
+            })
     
             function closeAll() {
                 popups.forEach(popup => {
@@ -28,14 +33,20 @@ export const popup = () => {
         function headerPopup() {
             const trigger = document.querySelector('.header__user');
             const user = trigger.querySelector('.header-user__login');
+            const userSvg = trigger.querySelector('.header-user__svg').children;
             const popup = document.querySelector('.header__popup');
-
             trigger.addEventListener('click', () => {
                 popup.classList.toggle('hidden');
                 if(popup.classList.contains('hidden')) {
                     user.style.color = '#ffffff';
+                    Array.from(userSvg).forEach(path => {
+                        path.style.fill = '#ffffff'
+                    })
                 }else {
                     user.style.color = '#40acff';
+                    Array.from(userSvg).forEach(path => {
+                        path.style.fill = '#40acff';
+                    })
                 }
             })
         }

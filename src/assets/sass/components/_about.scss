@@ -1,0 +1,43 @@
+.about {
+    padding: 50px;
+    @include mobile {
+        padding: 30px 15px;
+    }
+    &__paragraph {
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        font-weight: 400;
+    }
+
+    &__list-item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__ps {
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 50px;
+    }
+
+    &__gover {
+        font-weight: 400;
+        margin-bottom: 50px;
+    }
+
+    &__firm {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-weight: 400;
+    }
+}
+.firm-about {
+
+    &__address {
+        font-style: normal;
+    }
+}

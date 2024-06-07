@@ -46,10 +46,15 @@
         align-items: center;
         flex-wrap: wrap;
         gap: clamp(10px, 2vw, 36px);
-        
+        color: $blue-900;
         &:hover {
             .header-user__login {
                 color: $blue-900;
+            }
+            .header-user__svg {
+                path {
+                    fill: currentColor;
+                }
             }
         }
     }
@@ -99,22 +104,33 @@
             color: $blue-900;
         }
     }
-
-    &__item--active {
-        color: $blue-900;
-    }
-
 }
 .telegram {
-
     &__svg {
         width: clamp(23px, 3vw, 39px);
     }
+    &:hover {
+        & > .telegram__svg {
+            path {
+                transition: .3s fill ease-in-out;
+                &:nth-child(1), &:nth-child(2) {
+                    fill: $white;
+                }
+                &:nth-child(3) {
+                    fill: $blue-900;
+                }
+            }
+        }
+    }
 }
 .header-user {
-
+    
     &__svg {
         width: clamp(19px, 3vw, 28px);
+        height: clamp(19px, 3vw, 28px);
+        path {
+            transition: .3s fill ease-in-out;
+        }
     }
 
     &__login {

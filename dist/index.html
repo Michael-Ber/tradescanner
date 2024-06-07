@@ -14,26 +14,41 @@
 <header class="header">
     <a href="index.html" class="header__logo logo">
         <picture>
-          <source srcset="/assets/img/logo.svg" media="(min-width: 1200px)">
-          <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
-          <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+          <source srcset="./assets/img/logo.svg" media="(min-width: 1200px)">
+          <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
+          <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
         </picture>
         
     </a>
     <nav class="nav" title="Меню навигации">
       <ul class="list-reset nav__list">
-        <li class="nav__item nav__item--active"><a href="#" class="nav__link">О сканере</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Риск менеджмент</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Как пользоваться</a></li>
+        <li class="nav__item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+        <li class="nav__item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+        <li class="nav__item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
       </ul>
     </nav>
     
     <div class="header__account">
         <a href="#" class="telegram">
-            <img loading="lazy" src="/assets/img/telegram.svg" class="telegram__svg" width="39" height="39" alt="Телеграм">
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="telegram__svg" >
+              <g clip-path="url(#clip0_0_112)">
+              <path d="M19.5 39C30.2696 39 39 30.2696 39 19.5C39 8.73045 30.2696 0 19.5 0C8.73045 0 0 8.73045 0 19.5C0 30.2696 8.73045 39 19.5 39Z" fill="#59AAE7"/>
+              <path d="M19.5001 0C18.638 0 17.7892 0.0566719 16.9566 0.165064C26.5243 1.41146 33.9131 9.59255 33.9131 19.5C33.9131 29.4074 26.5243 37.5885 16.9565 38.8349C17.7892 38.9433 18.638 39 19.5001 39C30.2696 39 39.0001 30.2695 39.0001 19.5C39.0001 8.73052 30.2696 0 19.5001 0Z" fill="#3D9AE3"/>
+              <path d="M12.5447 23.7003L6.25577 20.5558C6.08339 20.4696 6.08171 20.2243 6.25287 20.1357L30.145 7.77763C30.3205 7.68684 30.5231 7.83941 30.4844 8.03319L26.3709 28.6009C26.3415 28.7477 26.1845 28.8302 26.0469 28.7713L20.4564 26.3755C20.3895 26.3467 20.3129 26.3506 20.2491 26.386L13.0251 30.3994C12.868 30.4866 12.6749 30.3731 12.6749 30.1933V23.9111C12.675 23.8218 12.6246 23.7402 12.5447 23.7003Z" fill="#FCFCFC"/>
+              <path d="M15.2581 25.8198L15.219 19.5411C15.2188 19.5009 15.2396 19.4635 15.2738 19.4426L25.4732 13.2119C25.5888 13.1413 25.7098 13.2944 25.6142 13.3905L17.8523 21.2076C17.8438 21.2162 17.8366 21.2261 17.8312 21.237L16.5035 23.8922L15.4745 25.8718C15.4193 25.9781 15.2588 25.9394 15.2581 25.8198Z" fill="#D8D7DA"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_0_112">
+              <rect width="39" height="39" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
         </a>
         <button class="btn-reset header__user header-user">
-            <img loading="lazy" src="/assets/img/user.svg" class="header-user__svg" width="28" height="28" alt="Пользователь">
+            <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-user__svg">
+              <path d="M11.9992 13.406C13.7857 13.406 15.287 12.5313 16.341 10.8764C17.184 9.55287 17.6674 7.81173 17.6674 6.09935C17.6674 2.97741 15.1247 0.4375 11.9992 0.4375C8.87461 0.4375 6.33252 2.97741 6.33252 6.09935C6.33252 7.74451 6.81186 9.50387 7.61472 10.8056C8.66407 12.5068 10.1802 13.406 11.9992 13.406Z" fill="white"/>
+              <path d="M17.3744 14.4639H6.6256C3.30071 14.4639 0.595703 16.9933 0.595703 20.1025V27.5626H23.4043V20.1025C23.4043 16.9934 20.6993 14.4639 17.3744 14.4639Z" fill="white"/>
+            </svg>
             <span class="header-user__login">Вход</span>
         </button>
         <div class="header__popup header-popup hidden">
@@ -72,34 +87,38 @@
         <h2 class="hero__subtitle">на фондовых и криптовалютных биржах мира</h2>
     </div>
     <picture>
-        <source srcset="/assets/img/webp/hero-bg.webp" media="(min-width: 576px)" type="image/webp" width="691" height="498">
-        <source srcset="/assets/img/webp/hero-bg_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="166">
-        <img loading="lazy" src="/assets/img/webp/hero-bg.webp" srcset="/assets/img/webp/hero-bg_2x.webp 2x" class="hero__img" alt="СКАНЕР ПРИБЫЛЬНЫХ СДЕЛОК">
+        <source srcset="./assets/img/webp/hero-bg.webp" media="(min-width: 576px)" type="image/webp" width="691" height="498">
+        <source srcset="./assets/img/webp/hero-bg_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="166">
+        <img loading="lazy" src="./assets/img/webp/hero-bg.webp" srcset="./assets/img/webp/hero-bg_2x.webp 2x" class="hero__img" alt="СКАНЕР ПРИБЫЛЬНЫХ СДЕЛОК">
     </picture>
     
     <div class="hero__table hero-table">
         <div class="hero-table__popups">
+            <div class="hero-table__info hidden">Скопировано</div>
             <div class="hero-table__popup hidden" data-popup-content="style">
                 <div class="hero-table__popup-wrapper">
                     <p class="hero-table__popup-content">
                         СТИЛЬ - Основной параметр стилей сделок - это срок отработки, т.е. достижение цены актива до основного тейк-профита. Кроме того, стили характеризуются и другими параметрами, после ознакомления с которыми можно будет легко подобрать для себя комфортный режим торговли и инвестиций
                     </p>
+                    <button class="btn-reset hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </button>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
             <div class="hero-table__popup hero-table__popup--registered hidden" data-popup-content="teaker">
                 <div class="hero-table__popup-wrapper">
-                    <p class="hero-table__popup-content">
+                    <div class="hero-table__popup-content">
                         <p class="hero-table__popup-content">
                             Выберете сделки в соответствии с вашем стилем трейдинга и инвестиций
                         </p>
-                        <form action="#" class="hero-table__form">
-                            <label class="hero-table__label"><input type="checkbox" value="skalping" class="hero-table__input"><span>Скальпинг</span></label>
-                            <label class="hero-table__label"><input type="checkbox" value="inside" class="hero-table__input"><span>Внутри дня</span></label>
-                            <label class="hero-table__label"><input type="checkbox" value="swing" class="hero-table__input"><span>Свинг</span></label>
-                            <label class="hero-table__label"><input type="checkbox" value="short" class="hero-table__input"><span>Краткосрок</span></label>
-                            <label class="hero-table__label"><input type="checkbox" value="middle" class="hero-table__input"><span>Среднесрок</span></label>
-                            <label class="hero-table__label"><input type="checkbox" value="long" class="hero-table__input"><span>Долгосрок</span></label>
+                        <form class="hero-table__form">
+                            <label class="hero-table__label"><input type="checkbox" value="skalping" class="hero-table__input"><span>Скальпинг</span> 2-4 часа (скоро)</label>
+                            <label class="hero-table__label"><input type="checkbox" value="inside" class="hero-table__input"><span>Внутри дня</span> 1-2 дня (скоро)</label>
+                            <label class="hero-table__label"><input type="checkbox" value="swing" class="hero-table__input"><span>Свинг</span> 1-2 недели</label>
+                            <label class="hero-table__label"><input type="checkbox" value="short" class="hero-table__input"><span>Краткосрок</span> 1-3 месяца</label>
+                            <label class="hero-table__label"><input type="checkbox" value="middle" class="hero-table__input"><span>Среднесрок</span> 6-12 месяцев</label>
+                            <label class="hero-table__label"><input type="checkbox" value="long" class="hero-table__input"><span>Долгосрок</span> 2-3 года</label>
                             <p class="hero-table__popup-content">
                                 Основной параметр стилей сделок - это срок отработки, т.е. достижение цены актива до основного тейк-профита. Кроме того, стили характеризуются и другими параметрами, после ознакомления с которыми можно будет легко подобрать для себя комфортный режим торговли и инвестиций. Более подробно в нашей статье о стилях трейдинга
                                 <a href="https://telegra.ph/Stili-na-tradescannerru-10-02" class="link">https://telegra.ph/Stili-na-tradescannerru-10-02</a>
@@ -109,15 +128,20 @@
                                 <button class="btn-reset hero-table__btn hero-table__btn--save" type="submit">Сохранить</button>
                             </div>
                         </form>
-                    </p>
+                        <div class="hero-table__popup-close">
+                            <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-table__info hidden">Скопировано</div>
             </div>
             <div class="hero-table__popup hidden" data-popup-content="range">
                 <div class="hero-table__popup-wrapper">
                     <p class="hero-table__popup-content">
                         Зона цены, наиболее благоприятна для открытия новой позиции. Иногда указывается в виде двух цен - здесь вам предоставляется свобода выбора как использовать эту информацию. Так, например, вы можете открывать сделку только по первой цене (наименее выгодной), или открывать сделку только по второй цене (наиболее выгодной) если цена соизволит дойти до указанного уровня, а также можно распределить сумму, которую вы выделяете на данную сделку расставив два и более открывающих ордеров внутри указанного диапазона.
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
@@ -126,6 +150,9 @@
                     <p class="hero-table__popup-content">
                         Цена, являющаяся целью сделки, при достижении которой, вы получаете прибыль. В некоторых случаях указывается промежуточная цель (маленький шрифт), фиксация прибыли в данной области позволит значительно сократить риски, но не является обязательной и остается на ваше усмотрение.
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
@@ -134,6 +161,9 @@
                     <p class="hero-table__popup-content">
                         Цена, при достижении активом которой, сделка перестает быть актуальной, и ее необходимо закрыть, зафиксировав убыток.
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
@@ -143,6 +173,9 @@
                         Данный показатель отражает потенциал изменения цены актива в %, от наименее выгодной точки входа в сделку до основного тейк-профита. <br>
                         Чтобы получить доступ к полному функционалу сайта, необходимо
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
@@ -152,6 +185,9 @@
                         Данный показатель отражает % изменения цены актива от наименее выгодной точки входа до рекомендуемого Стоп-лосса<br>
                         Чтобы получить доступ к полному функционалу сайта, необходимо
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
             </div>
@@ -161,15 +197,18 @@
                         Данный показатель отражает потенциал сделки с точки зрения отношения ее потенциальной прибыли к потенциальному убытку. Расчет ведется по наименее выгодной точки входа в сделку.<br>
                         Чтобы получить доступ к полному функционалу сайта, необходимо
                     </p>
+                    <div class="hero-table__popup-close">
+                        <img loading="lazy" src="./assets/img/close.svg" class="hero-table__popup-svg" width="17" height="17" alt="Закрыть модальное окно">
+                    </div>
                     <a href="register.html" class="register">Пройти регистрацию</a>
                 </div>
                 
             </div>
         </div>
         <picture>
-          <source srcset="/assets/img/webp/circle-hero.webp" media="(min-width: 576px)" type="image/webp" width="1237" height="1214">
-          <source srcset="/assets/img/webp/circle-hero_mobile.webp" media="(max-width: 575px)" type="image/webp">
-          <img loading="lazy" src="/assets/img/webp/circle-hero.webp" class="hero__circle">
+          <source srcset="./assets/img/webp/circle-hero.webp" media="(min-width: 576px)" type="image/webp" width="1237" height="1214">
+          <source srcset="./assets/img/webp/circle-hero_mobile.webp" media="(max-width: 575px)" type="image/webp">
+          <img loading="lazy" src="./assets/img/webp/circle-hero.webp" class="hero__circle" alt="Фоновая подсветка">
         </picture>
         <div class="hero-table__top hero-table-top">
             <ul class="hero-table-top__list list-reset">
@@ -181,14 +220,14 @@
         </div>
         <div class="hero-table__tabs">
             <div class="hero-table__tabs-btns">
-                <button class="btn-reset hero-table__tabitem hero-table__tabitem--active hero-table-tabitem" data-tabBtn="1">
-                    <div class="hero-table-tabitem__wrapper">
-                        <div class="crypto-name">Россия</div>
-                        <div class="crypto-deals">
+                <button class="btn-reset hero-table__tabitem hero-table-tabitem" data-tabBtn="1">
+                    <span class="hero-table-tabitem__wrapper">
+                        <span class="crypto-name">Россия</span>
+                        <span class="crypto-deals">
                             <span class="crypto-deals__value">17</span>
                             <span class="crypto-deals__today">сделок сегодня</span>
-                        </div>
-                    </div>
+                        </span>
+                    </span>
                 </button>
                 <div class="hero-table__mobile-content table-mobile-content" data-tabMobileContent="1">
                     <div class="table-mobile-content__main">
@@ -205,21 +244,22 @@
                             <li class="table-mobile-content__name" data-popup="sp">%СП</li>
                         </ul>
                         <ul class="list-reset table-mobile-content__values">
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
                         </ul>
                     </div>
                 </div>
                 <button class="btn-reset hero-table__tabitem hero-table-tabitem" data-tabBtn="2">
-                    <div class="hero-table-tabitem__wrapper">
-                        <div class="crypto-name">США</div>
-                        <div class="crypto-deals">
+                    <span class="hero-table-tabitem__wrapper">
+                        <span class="crypto-name">США</span>
+                        <span class="crypto-deals">
                             <span class="crypto-deals__value">63</span>
-                        </div>
-                    </div>
+                            <span class="crypto-deals__today">сделок сегодня</span>
+                        </span>
+                    </span>
                 </button>
                 <div class="hero-table__mobile-content table-mobile-content" data-tabMobileContent="2">
                     <div class="table-mobile-content__main">
@@ -236,21 +276,22 @@
                             <li class="table-mobile-content__name" data-popup="sp">%СП</li>
                         </ul>
                         <ul class="list-reset table-mobile-content__values">
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
                         </ul>
                     </div>
                 </div>
                 <button class="btn-reset hero-table__tabitem hero-table-tabitem" data-tabBtn="3">
-                    <div class="hero-table-tabitem__wrapper">
-                        <div class="crypto-name">Гонконг</div>
-                        <div class="crypto-deals">
+                    <span class="hero-table-tabitem__wrapper">
+                        <span class="crypto-name">Гонконг</span>
+                        <span class="crypto-deals">
                             <span class="crypto-deals__value">10</span>
-                        </div>
-                    </div>
+                            <span class="crypto-deals__today">сделок сегодня</span>
+                        </span>
+                    </span>
                 </button>
                 <div class="hero-table__mobile-content table-mobile-content" data-tabMobileContent="3">
                     <div class="table-mobile-content__main">
@@ -267,21 +308,22 @@
                             <li class="table-mobile-content__name" data-popup="sp">%СП</li>
                         </ul>
                         <ul class="list-reset table-mobile-content__values">
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
                         </ul>
                     </div>
                 </div>
                 <button class="btn-reset hero-table__tabitem hero-table-tabitem" data-tabBtn="4">
-                    <div class="hero-table-tabitem__wrapper">
-                        <div class="crypto-name">Крипто USDT</div>
-                        <div class="crypto-deals">
+                    <span class="hero-table-tabitem__wrapper">
+                        <span class="crypto-name">Крипто USDT</span>
+                        <span class="crypto-deals">
                             <span class="crypto-deals__value">3</span>
-                        </div>
-                    </div>
+                            <span class="crypto-deals__today">сделок сегодня</span>
+                        </span>
+                    </span>
                 </button>
                 <div class="hero-table__mobile-content table-mobile-content" data-tabMobileContent="4">
                     <div class="table-mobile-content__main">
@@ -298,21 +340,22 @@
                             <li class="table-mobile-content__name" data-popup="sp">%СП</li>
                         </ul>
                         <ul class="list-reset table-mobile-content__values">
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
-                            <li class="table-mobile-content__value plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col plus">3.66</li>
                         </ul>
                     </div>
                 </div>
                 <button class="btn-reset hero-table__tabitem hero-table-tabitem" data-tabBtn="5">
-                    <div class="hero-table-tabitem__wrapper">
-                        <div class="crypto-name">Крипто BTC</div>
-                        <div class="crypto-deals">
+                    <span class="hero-table-tabitem__wrapper">
+                        <span class="crypto-name">Крипто BTC</span>
+                        <span class="crypto-deals">
                             <span class="crypto-deals__value">3</span>
-                        </div>
-                    </div>
+                            <span class="crypto-deals__today">сделок сегодня</span>
+                        </span>
+                    </span>
                 </button>
                 <div class="hero-table__mobile-content table-mobile-content" data-tabMobileContent="5">
                     <div class="table-mobile-content__main">
@@ -329,17 +372,166 @@
                             <li class="table-mobile-content__name" data-popup="sp">%СП</li>
                         </ul>
                         <ul class="list-reset table-mobile-content__values">
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
-                            <li class="table-mobile-content__value minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
+                            <li class="table-mobile-content__value table-mobile-content__col minus">3.66</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="hero-table__tabs-contents">
-                <table class="hero-table__tabcontent tabcontent-hero-table" data-tabContent="1">
+                <div class="hero-table__tabcontent tabcontent-hero-table">
+                    <div class="tabcontent-hero-table__head">
+                        <div class="tabcontent-hero-table__head-tr">
+                            <div class="tabcontent-hero-table__head-th">
+                                <input type="date" value="2024-06-07" name="calendar" class="tabcontent-hero-table__calendar">
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="style">Стиль</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="teaker">Тикер</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="range">Диапозон входа</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="profit">Тейк-Профит</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="stop">Стоп-Лосс</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="tp">%ТП</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="sp">%СП</button>
+                            </div>
+                            <div class="tabcontent-hero-table__head-th">
+                                <button class="btn-reset table-btn" data-popup="risk">Прибыль/риск</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabcontent-hero-table__body">
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td minus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td minus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td minus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td minus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td minus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td minus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td minus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td plus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td plus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td plus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td plus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td plus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td plus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td plus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td plus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td plus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td minus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td minus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td minus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td minus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td minus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td minus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td minus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td minus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td minus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td minus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td minus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td minus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td minus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td minus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td plus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td plus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td plus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td plus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td plus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td plus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td plus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td plus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td plus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td minus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td minus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td minus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td minus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td minus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td minus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td minus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                        </div>
+                        <div class="tabcontent-hero-table__body-tr">
+                            <div class="tabcontent-hero-table__body-td minus">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;"xml:space="preserve" class="tabcontent-hero-table__body-svg">
+                                <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75
+                                    C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z"  fill="transparent"/>
+                                </svg>
+                            </div>
+                            <div class="tabcontent-hero-table__body-td minus">Среднесрок</div>
+                            <div class="tabcontent-hero-table__body-td minus">MRKS</div>
+                            <div class="tabcontent-hero-table__body-td minus">0.818 - 0.81</div>
+                            <div class="tabcontent-hero-table__body-td minus">1.75</div>
+                            <div class="tabcontent-hero-table__body-td minus">30.44</div>
+                            <div class="tabcontent-hero-table__body-td minus">8.31</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                            <div class="tabcontent-hero-table__body-td minus">3.66</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <table class="hero-table__tabcontent tabcontent-hero-table" data-tabContent="1">
                     <thead class="tabcontent-hero-table__head">
                         <tr class="tabcontent-hero-table__head-tr">
                             <th class="tabcontent-hero-table__head-th">
@@ -367,11 +559,37 @@
                                 <button class="btn-reset table-btn" data-popup="risk">Прибыль/риск</button>
                             </th>
                         </tr>
+                        <tr class="tabcontent-hero-table__head-tr">
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                            <th class="tabcontent-hero-table__head-th">
+                                
+                            </th>
+                        </tr>
                         <tr class="tabcontent-hero-table__head-th empty"></tr>
                     </thead>
                     <tbody class="tabcontent-hero-table__body">
                         <tr class="tabcontent-hero-table__body-tr">
-                            <td  class="tabcontent-hero-table__body-td minus">Среднесрок</td>
+                            <td class="tabcontent-hero-table__body-td minus">Среднесрок</td>
                             <td class="tabcontent-hero-table__body-td minus">MRKS</td>
                             <td class="tabcontent-hero-table__body-td minus">0.818 - 0.81</td>
                             <td class="tabcontent-hero-table__body-td minus">1.75</td>
@@ -400,7 +618,7 @@
                             <td class="tabcontent-hero-table__body-td minus">3.66</td>
                             <td class="tabcontent-hero-table__body-td minus">3.66</td>
                         </tr>
-                        <tr class="tabcontent-hero-table__body-tr tabcontent-hero-table__body-tr--actual">
+                        <tr class="tabcontent-hero-table__body-tr">
                             <td class="tabcontent-hero-table__body-td minus">Среднесрок</td>
                             <td class="tabcontent-hero-table__body-td minus">MRKS</td>
                             <td class="tabcontent-hero-table__body-td minus">0.818 - 0.81</td>
@@ -441,7 +659,7 @@
                             <td class="tabcontent-hero-table__body-td minus">3.66</td>
                         </tr>
                     </tbody>
-                </table>
+                </table> -->
             </div>
             
         </div>
@@ -453,9 +671,9 @@
     <div class="benefits__wrapper">
         <article class="benefits-item">
             <picture class="benefits-item__pic">
-              <source srcset="/assets/img/webp/forecast.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
-              <source srcset="/assets/img/webp/forecast_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
-              <img loading="lazy" src="/assets/img/webp/forecast.webp" srcset="/assets/img/webp/forecast_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
+              <source srcset="./assets/img/webp/forecast.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
+              <source srcset="./assets/img/webp/forecast_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
+              <img loading="lazy" src="./assets/img/webp/forecast.webp" srcset="./assets/img/webp/forecast_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
             </picture>
             <div class="benefits-item__descr">
                 <h2 class="benefits-item__title article-title">ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ</h2>
@@ -465,9 +683,9 @@
         </article>
         <article class="benefits-item">
             <picture class="benefits-item__pic">
-              <source srcset="/assets/img/webp/analysis.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
-              <source srcset="/assets/img/webp/analysis_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
-              <img loading="lazy" src="/assets/img/webp/analysis.webp" srcset="/assets/img/webp/analysis_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
+              <source srcset="./assets/img/webp/analysis.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
+              <source srcset="./assets/img/webp/analysis_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
+              <img loading="lazy" src="./assets/img/webp/analysis.webp" srcset="./assets/img/webp/analysis_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
             </picture>
             <div class="benefits-item__descr">
                 <h2 class="benefits-item__title article-title">ПРОФЕССИОНАЛЬНЫЙ АНАЛИЗ В ВАШИХ РУКАХ</h2>
@@ -477,9 +695,9 @@
         </article>
         <article class="benefits-item">
             <picture class="benefits-item__pic">
-              <source srcset="/assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
-              <source srcset="/assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
-              <img loading="lazy" src="/assets/img/webp/economy.webp" srcset="/assets/img/webp/economy_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
+              <source srcset="./assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="798" height="554">
+              <source srcset="./assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="301" height="209">
+              <img loading="lazy" src="./assets/img/webp/economy.webp" srcset="./assets/img/webp/economy_2x.webp 2x" class="benefits-item__img" alt="ЕЖЕДНЕВНЫЙ ПРОГНОЗ БИРЖЕВЫХ ЦЕН С ВЫСОКОЙ ТОЧНОСТЬЮ">
             </picture>
             <div class="benefits-item__descr">
                 <h2 class="benefits-item__title article-title">ЭКОНОМИТ 90% ЛИЧНОГО ВРЕМЕНИ ТРЕЙДЕРОВ И ИНВЕСТОРОВ</h2>
@@ -513,44 +731,44 @@
         </div>
         <div class="companies__right">
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-1.webp" media="(min-width: 576px)" type="image/webp" width="225" height="70">
-              <source srcset="/assets/img/webp/company-1_mobile.webp" media="(max-width: 575px)" type="image/webp" width="79" height="25">
-              <img loading="lazy" src="/assets/img/webp/company-1" class="companies__img" alt="Московская биржа">
+              <source srcset="./assets/img/webp/company-1.webp" media="(min-width: 576px)" type="image/webp" width="225" height="70">
+              <source srcset="./assets/img/webp/company-1_mobile.webp" media="(max-width: 575px)" type="image/webp" width="79" height="25">
+              <img loading="lazy" src="./assets/img/webp/company-1" class="companies__img" alt="Московская биржа">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-2.webp" media="(min-width: 576px)" type="image/webp" width="225" height="70">
-              <source srcset="/assets/img/webp/company-2_mobile.webp" media="(max-width: 575px)" type="image/webp" width="80" height="25">
-              <img loading="lazy" src="/assets/img/webp/company-2" class="companies__img" alt="NYSE">
+              <source srcset="./assets/img/webp/company-2.webp" media="(min-width: 576px)" type="image/webp" width="225" height="70">
+              <source srcset="./assets/img/webp/company-2_mobile.webp" media="(max-width: 575px)" type="image/webp" width="80" height="25">
+              <img loading="lazy" src="./assets/img/webp/company-2" class="companies__img" alt="NYSE">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-3.webp" media="(min-width: 576px)" type="image/webp" width="287" height="39">
-              <source srcset="/assets/img/webp/company-3_mobile.webp" media="(max-width: 575px)" type="image/webp" width="102" height="14">
-              <img loading="lazy" src="/assets/img/webp/company-3" class="companies__img" alt="СБП Биржа">
+              <source srcset="./assets/img/webp/company-3.webp" media="(min-width: 576px)" type="image/webp" width="287" height="39">
+              <source srcset="./assets/img/webp/company-3_mobile.webp" media="(max-width: 575px)" type="image/webp" width="102" height="14">
+              <img loading="lazy" src="./assets/img/webp/company-3" class="companies__img" alt="СБП Биржа">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-4.webp" media="(min-width: 576px)" type="image/webp" width="225" height="57">
-              <source srcset="/assets/img/webp/company-4_mobile.webp" media="(max-width: 575px)" type="image/webp" width="79" height="20">
-              <img loading="lazy" src="/assets/img/webp/company-4" class="companies__img" width="" height="" alt="Nasdaq">
+              <source srcset="./assets/img/webp/company-4.webp" media="(min-width: 576px)" type="image/webp" width="225" height="57">
+              <source srcset="./assets/img/webp/company-4_mobile.webp" media="(max-width: 575px)" type="image/webp" width="79" height="20">
+              <img loading="lazy" src="./assets/img/webp/company-4" class="companies__img" alt="Nasdaq">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-5.webp" media="(min-width: 576px)" type="image/webp" width="135" height="102">
-              <source srcset="/assets/img/webp/company-5_mobile.webp" media="(max-width: 575px)" type="image/webp" width="47" height="36">
-              <img loading="lazy" src="/assets/img/webp/company-5" class="companies__img" alt="Binance">
+              <source srcset="./assets/img/webp/company-5.webp" media="(min-width: 576px)" type="image/webp" width="135" height="102">
+              <source srcset="./assets/img/webp/company-5_mobile.webp" media="(max-width: 575px)" type="image/webp" width="47" height="36">
+              <img loading="lazy" src="./assets/img/webp/company-5" class="companies__img" alt="Binance">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-6.webp" media="(min-width: 576px)" type="image/webp" width="194" height="60">
-              <source srcset="/assets/img/webp/company-6_mobile.webp" media="(max-width: 575px)" type="image/webp" width="69" height="21">
-              <img loading="lazy" src="/assets/img/webp/company-6" class="companies__img" alt="BYBIT">
+              <source srcset="./assets/img/webp/company-6.webp" media="(min-width: 576px)" type="image/webp" width="194" height="60">
+              <source srcset="./assets/img/webp/company-6_mobile.webp" media="(max-width: 575px)" type="image/webp" width="69" height="21">
+              <img loading="lazy" src="./assets/img/webp/company-6" class="companies__img" alt="BYBIT">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-7.webp" media="(min-width: 576px)" type="image/webp" width="154" height="39">
-              <source srcset="/assets/img/webp/company-7_mobile.webp" media="(max-width: 575px)" type="image/webp" width="54" height="14">
-              <img loading="lazy" src="/assets/img/webp/company-7" class="companies__img" alt="OKX">
+              <source srcset="./assets/img/webp/company-7.webp" media="(min-width: 576px)" type="image/webp" width="154" height="39">
+              <source srcset="./assets/img/webp/company-7_mobile.webp" media="(max-width: 575px)" type="image/webp" width="54" height="14">
+              <img loading="lazy" src="./assets/img/webp/company-7" class="companies__img" alt="OKX">
             </picture>
             <picture class="companies__pic">
-              <source srcset="/assets/img/webp/company-8.webp" media="(min-width: 576px)" type="image/webp" width="171" height="75">
-              <source srcset="/assets/img/webp/company-8_mobile.webp" media="(max-width: 575px)" type="image/webp" width="61" height="26">
-              <img loading="lazy" src="/assets/img/webp/company-8" class="companies__img" alt="HKEX">
+              <source srcset="./assets/img/webp/company-8.webp" media="(min-width: 576px)" type="image/webp" width="171" height="75">
+              <source srcset="./assets/img/webp/company-8_mobile.webp" media="(max-width: 575px)" type="image/webp" width="61" height="26">
+              <img loading="lazy" src="./assets/img/webp/company-8" class="companies__img" alt="HKEX">
             </picture>
         </div>
     </div>
@@ -563,17 +781,17 @@
     </h2>
     <div class="examples__content-table examples__content">
         <picture>
-          <source srcset="/assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="829" height="619">
-          <source srcset="/assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="235">
-          <img loading="lazy" src="/assets/img/webp/economy.webp" srcset="/assets/img/webp/economy_2x.webp 2x" class="examples__img" alt="ПРИМЕР ТАБЛИЦЫ С ПОЛНОЦЕНЫМ ФУНКЦИОНАЛОМ">
+          <source srcset="./assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="829" height="619">
+          <source srcset="./assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="235">
+          <img loading="lazy" src="./assets/img/webp/economy.webp" srcset="./assets/img/webp/economy_2x.webp 2x" class="examples__img" alt="ПРИМЕР ТАБЛИЦЫ С ПОЛНОЦЕНЫМ ФУНКЦИОНАЛОМ">
         </picture>
     </div>
     <h2 class="examples__title-search examples__title example-title">ПРИМЕР РАБОТЫ ПОИСКА ПО ТАБЛИЦЕ</h2>
     <div class="examples__content-search examples__content">
         <picture>
-            <source srcset="/assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="829" height="619">
-            <source srcset="/assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="235">
-            <img loading="lazy" src="/assets/img/webp/economy.webp" srcset="/assets/img/webp/economy_2x.webp 2x" class="examples__img" alt="ПРИМЕР РАБОТЫ ПОИСКА ПО ТАБЛИЦЕ">
+            <source srcset="./assets/img/webp/economy.webp" media="(min-width: 576px)" type="image/webp" width="829" height="619">
+            <source srcset="./assets/img/webp/economy_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="235">
+            <img loading="lazy" src="./assets/img/webp/economy.webp" srcset="./assets/img/webp/economy_2x.webp 2x" class="examples__img" alt="ПРИМЕР РАБОТЫ ПОИСКА ПО ТАБЛИЦЕ">
           </picture>
     </div>
 </section>
@@ -582,15 +800,15 @@
 <section class="video">
     <h2 class="video__title hidden" aria-label="Видеоблок">Видеоблок</h2>
     <div class="video__images">
-        <img loading="lazy" src="/assets/img/webp/circle-hero.webp" class="video__img-circle video__img" width="1242" height="741">
+        <img loading="lazy" src="./assets/img/webp/circle-hero.webp" class="video__img-circle video__img" width="1242" height="741" alt="Фоновая подсветка">
         <picture>
-          <source srcset="/assets/img/webp/video-bg.webp" media="(min-width: 576px)" type="image/webp" width="1075" height="746">
-          <source srcset="/assets/img/webp/video-bg_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="375">
-          <img loading="lazy" src="/assets/img/webp/video-bg.webp" srcset="/assets/img/webp/video-bg_2x.webp 2x" class="video__img-bg video__img" alt="Видеоблок">
+          <source srcset="./assets/img/webp/video-bg.webp" media="(min-width: 576px)" type="image/webp" width="1075" height="746">
+          <source srcset="./assets/img/webp/video-bg_mobile.webp" media="(max-width: 575px)" type="image/webp" width="320" height="375">
+          <img loading="lazy" src="./assets/img/webp/video-bg.webp" srcset="./assets/img/webp/video-bg_2x.webp 2x" class="video__img-bg video__img" alt="Видеоблок">
         </picture>
     </div>
     <div class="video__wrapper">
-        <iframe width="921" height="506" src="https://www.youtube.com/embed/0mRhdV3ldVM?si=kgLUVKtV03hXaGba" title="Видеоблок" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="video__player"></iframe>
+        <!-- <iframe width="921" height="506" src="https://www.youtube.com/embed/0mRhdV3ldVM?si=kgLUVKtV03hXaGba" title="Видеоблок" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="video__player"></iframe> -->
     </div>
     
 </section>
@@ -601,18 +819,18 @@
     <div class="footer__block footer__block--logo">
         <a href="#" class="footer__logo logo">
             <picture>
-                <source srcset="/assets/img/logo.svg" media="(min-width: 768px)">
-                <source srcset="/assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
-                <img loading="lazy" src="/assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+                <source srcset="./assets/img/logo.svg" media="(min-width: 768px)">
+                <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
+                <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
               </picture>
         </a>
     </div>
     <div class="footer__block footer__block--nav">
         <nav class="nav footer__nav" title="Навигация по сайту">
           <ul class="list-reset nav__list footer__nav-list">
-            <li class="nav__item nav__item--active footer__nav-item"><a href="#" class="nav__link">О сканере</a></li>
-            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Риск менеджмент</a></li>
-            <li class="nav__item footer__nav-item"><a href="#" class="nav__link">Как пользоваться</a></li>
+            <li class="nav__item nav__item--active footer__nav-item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
           </ul>
         </nav>
     </div>
@@ -626,7 +844,7 @@
     <div class="footer__block footer__block--social">
         <span class="footer__label">Мы в соц сетях</span>
         <a href="#" class="footer__social-link" aria-label="Телеграм">
-            <img loading="lazy" src="/assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
+            <img loading="lazy" src="./assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
         </a>
     </div>
     <div class="footer__rights">

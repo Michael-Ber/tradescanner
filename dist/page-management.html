@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Site</title>
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="page__body">
+    <div class="site-container">
+        <!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="header__logo logo">
+        <picture>
+          <source srcset="./assets/img/logo.svg" media="(min-width: 1200px)">
+          <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
+          <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+        </picture>
+        
+    </a>
+    <nav class="nav" title="Меню навигации">
+      <ul class="list-reset nav__list">
+        <li class="nav__item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+        <li class="nav__item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+        <li class="nav__item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header__account">
+        <a href="#" class="telegram">
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="telegram__svg" >
+              <g clip-path="url(#clip0_0_112)">
+              <path d="M19.5 39C30.2696 39 39 30.2696 39 19.5C39 8.73045 30.2696 0 19.5 0C8.73045 0 0 8.73045 0 19.5C0 30.2696 8.73045 39 19.5 39Z" fill="#59AAE7"/>
+              <path d="M19.5001 0C18.638 0 17.7892 0.0566719 16.9566 0.165064C26.5243 1.41146 33.9131 9.59255 33.9131 19.5C33.9131 29.4074 26.5243 37.5885 16.9565 38.8349C17.7892 38.9433 18.638 39 19.5001 39C30.2696 39 39.0001 30.2695 39.0001 19.5C39.0001 8.73052 30.2696 0 19.5001 0Z" fill="#3D9AE3"/>
+              <path d="M12.5447 23.7003L6.25577 20.5558C6.08339 20.4696 6.08171 20.2243 6.25287 20.1357L30.145 7.77763C30.3205 7.68684 30.5231 7.83941 30.4844 8.03319L26.3709 28.6009C26.3415 28.7477 26.1845 28.8302 26.0469 28.7713L20.4564 26.3755C20.3895 26.3467 20.3129 26.3506 20.2491 26.386L13.0251 30.3994C12.868 30.4866 12.6749 30.3731 12.6749 30.1933V23.9111C12.675 23.8218 12.6246 23.7402 12.5447 23.7003Z" fill="#FCFCFC"/>
+              <path d="M15.2581 25.8198L15.219 19.5411C15.2188 19.5009 15.2396 19.4635 15.2738 19.4426L25.4732 13.2119C25.5888 13.1413 25.7098 13.2944 25.6142 13.3905L17.8523 21.2076C17.8438 21.2162 17.8366 21.2261 17.8312 21.237L16.5035 23.8922L15.4745 25.8718C15.4193 25.9781 15.2588 25.9394 15.2581 25.8198Z" fill="#D8D7DA"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_0_112">
+              <rect width="39" height="39" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+        </a>
+        <button class="btn-reset header__user header-user">
+            <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-user__svg">
+              <path d="M11.9992 13.406C13.7857 13.406 15.287 12.5313 16.341 10.8764C17.184 9.55287 17.6674 7.81173 17.6674 6.09935C17.6674 2.97741 15.1247 0.4375 11.9992 0.4375C8.87461 0.4375 6.33252 2.97741 6.33252 6.09935C6.33252 7.74451 6.81186 9.50387 7.61472 10.8056C8.66407 12.5068 10.1802 13.406 11.9992 13.406Z" fill="white"/>
+              <path d="M17.3744 14.4639H6.6256C3.30071 14.4639 0.595703 16.9933 0.595703 20.1025V27.5626H23.4043V20.1025C23.4043 16.9934 20.6993 14.4639 17.3744 14.4639Z" fill="white"/>
+            </svg>
+            <span class="header-user__login">Вход</span>
+        </button>
+        <div class="header__popup header-popup hidden">
+            <a href="#" class="header-popup__link">Личный кабинет</a>
+            <a href="page-login.html" class="header-popup__link">Логин</a>
+            <a href="#" class="header-popup__link">Подписки</a>
+            <a href="#" class="header-popup__link">Контакты</a>
+            <a href="page-payment.html" class="header-popup__link">Оплата</a>
+            <a href="#" class="header-popup__link">Выход</a>
+        </div>
+    </div>
+    <div class="burger" title="Бургер меню">
+        <button class="burger__btn" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="burger__menu" aria-hidden="true">
+          <nav class="burger__nav" title="Меню навигации">
+            <ul class="burger__list">
+              <li class="burger__item"><a href="#" class="burger__link">О сканере</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Риск менеджмент</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Как пользоваться</a></li>
+            </ul>
+          </nav>
+         </div>
+      </div>
+</header>
+<!-- /HEADER -->
+        <main class="main">
+            <!-- MANAGEMENT -->
+<section class="management">
+    <p class="management__paragraph paragraph-common">
+        Риск менеджмент или управление риском&nbsp;&mdash; один из&nbsp;самых важных аспектов трейдинга и&nbsp;инвестиций, от&nbsp;понимания которого напрямую зависит ваш финансовый результат.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Пожалуйста, прочитайте эту статью столько раз, сколько потребуется, чтобы понять каждое слово, каждую строчку и&nbsp;весь смысл того, что здесь написано. И&nbsp;когда читая, вы&nbsp;будете чувствовать, что в&nbsp;вашей голове начинает ломаться привычное представление о&nbsp;том, как нужно открывать сделку&nbsp;&mdash; это значит что вы&nbsp;на&nbsp;верном пути и&nbsp;уже преодолеваете этот невидимый барьер, который разделяет всех участников торгов на&nbsp;тех, кто приносит деньги на&nbsp;биржу, и&nbsp;на&nbsp;тех, кто уносит прибыль с&nbsp;биржи.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        <b>Риск</b>&nbsp;&mdash; это сумма <b>убытка</b> в&nbsp;процентном отношении от&nbsp;депозита (1%, 2%, 5%&nbsp;и&nbsp;т.д.), или в&nbsp;абсолютном значении ($100, $1000 и&nbsp;т.д.), которая сформируется в&nbsp;случае достижении цены установленного стоп-лосса.
+    </p>
+    <p class="management__paragraph paragraph-common bold">
+        Именно этим риском Вам предстоит научиться управлять.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Прежде чем приступать к&nbsp;торговле, вы&nbsp;должны четко определить для себя, какой риск на&nbsp;каждую сделку вы&nbsp;готовы брать (это будет ваша постоянная величина), а&nbsp;также максимальное количество одновременно открываемых позиций, т.е. суммарный риск. Таким образом, вы&nbsp;начинаете регулировать и&nbsp;ограничивать максимальный убыток от&nbsp;вашей торговой деятельности.
+    </p>
+    <p class="management__paragraph paragraph-common italic padding">
+        <b>Консервативным риском</b> обычно считается риск на&nbsp;сделку не&nbsp;более&nbsp;1% от&nbsp;депозита, с&nbsp;суммарным риском не&nbsp;более&nbsp;2% (т.е. или одновременно открыто 2&nbsp;сделки по&nbsp;1% или 1&nbsp;сделка на&nbsp;2%). Подходит для тех, кто только начинает свой путь в&nbsp;финансовом мире.
+    </p>
+    <p class="management__paragraph paragraph-common italic padding">
+        <b>Умеренным риском</b> обычно называют риск на&nbsp;сделку не&nbsp;более&nbsp;2% от&nbsp;депозита и&nbsp;не&nbsp;более 2&nbsp;одновременно открытых позиций, т.е. суммарный риск в&nbsp;моменте не&nbsp;должен превышает&nbsp;4% от&nbsp;депозита. Подходит для тех, у&nbsp;кого уже есть небольшой опыт и&nbsp;положительная статистика торгов.
+    </p>
+    <p class="management__paragraph paragraph-common italic padding">
+        <b>Агрессивным подходом</b> считается суммарный риск 5&nbsp;и&nbsp;более&nbsp;%, который может быть распределен как в&nbsp;одной сделки, так и&nbsp;в&nbsp;несколько одновременно открытых в&nbsp;моменте. Такой риск используют профессиональные трейдеры и&nbsp;инвесторы, имеющие собственную торговую стратегию, которая на&nbsp;протяжении длительного времени показывает положительные результаты торговли.
+    </p>
+    <ul class="list-reset management__list">
+        <li class="management__list-item">
+            Управление риском сделки начинается с&nbsp;того, что рассчитывается объем средств, выделяемых под конкретную сделку через стоп-лосс, формула такая:
+        </li>
+        <li class="management__list-item italic">
+            Объем сделки в&nbsp;%&nbsp;от&nbsp;депозита = (%&nbsp;вашего риска&nbsp;/ %&nbsp;стопа от&nbsp;точки входа&nbsp;/ плечо, используемое в&nbsp;сделки) *100
+        </li>
+        <li class="management__list-item">Пример на&nbsp;сделки VKCO:</li>
+        <li class="management__list-item"><b>вход:</b> 539 <b>стоп-лосс:</b> 404 (25,05%) <b>тейк-профит:</b> 774 (43,6%)</li>
+        <li class="management__list-item">
+            Сделаем расчет с&nbsp;депозитом 50&nbsp;000&nbsp;рублей, через умеренный риск в&nbsp;<b>2%</b> на&nbsp;сделку (1000&nbsp;рублей) без плеча и&nbsp;с&nbsp;плечом&nbsp;3.
+        </li>
+        <li class="management__list-item">
+            <b>2%</b>&nbsp;/ 25,05&nbsp;/ 1 * 100 = 7,98%&nbsp;&mdash; при торговле без плеча
+        </li>
+        <li class="management__list-item">
+            <b>2%</b>&nbsp;/25,05&nbsp;/ 3 * 100 = 2,66%&nbsp;&mdash; при торговле с&nbsp;плечом&nbsp;3.
+        </li>
+    </ul>
+    <p class="management__paragraph paragraph-common">
+        Таким образом, при торговле без плеча, купив акции VCKO на&nbsp;7,98% от&nbsp;депозита или на&nbsp;3990&nbsp;рублей, вы&nbsp;рискуете потерять на&nbsp;этой сделки всего лишь&nbsp;2% от&nbsp;депозита или 1000&nbsp;рублей.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        При торговле с&nbsp;плечом&nbsp;3, вам потребуется сумма в&nbsp;размере 2,66% от&nbsp;депозита или 1330&nbsp;рублей, чтобы взять сделку с&nbsp;риском&nbsp;2% или в&nbsp;1000&nbsp;рублей.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Т.е.&nbsp;в&nbsp;обоих случаях ваш убыток от&nbsp;этой сделки не&nbsp;превысит&nbsp;2% от&nbsp;депозита или 1000&nbsp;рублей, не&nbsp;важно, какое плечо вы&nbsp;используете. И&nbsp;в&nbsp;этом и&nbsp;есть основная суть риск-менеджмента. Вы&nbsp;всегда знаете, сколько теоретически можете потерять на&nbsp;той или иной сделке, и&nbsp;управляете этой суммой, сами её&nbsp;устанавливаете, задаёте и&nbsp;контролируете&nbsp;её, используя постоянно во&nbsp;всех ваших сделках.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Округляйте суммы в&nbsp;меньшую сторону, и&nbsp;не&nbsp;превышайте установленного порога, пусть это будет для вас таким&nbsp;же правилом, как почистить зубы с&nbsp;утра.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Хотите рискнуть?! Вам кажется, что сделка железобетонная или у&nbsp;вас есть 100% инсайд&nbsp;&mdash; не&nbsp;проблема, просто увеличьте и&nbsp;четко установите %&nbsp;риска, которым готовы пожертвовать, если что-то пойдет не&nbsp;по&nbsp;вашему плану. Тем не&nbsp;менее, вы&nbsp;будете знать, на&nbsp;какой риск идете, еще до&nbsp;момента открытия сделки, и&nbsp;будете спокойно спать, зная, что не&nbsp;потеряете больше запланированного.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Начинайте с&nbsp;небольшого риска, постепенно увеличивая его если видите, что ваша торговля приносит вам профит в&nbsp;течении 1&nbsp;года.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Риск должен стать вашей основной переменной в&nbsp;торговле. Рассматривайте все свои сделки с&nbsp;точки зрения риска&nbsp;&mdash; так, например, вышеупомянутая сделка VKCO принесёт вам не&nbsp;43,5% профита, а&nbsp;принесет вам&nbsp;&mdash; 1,74 риска (43,6/25,05) или другими словами, соотношение потенциальной прибыли к&nbsp;потенциальному риску (убытку) в&nbsp;данной сделке составляет 1,74. Ищите сделки с&nbsp;потенциально высоким соотношением прибыль/риск&nbsp;&mdash; это и&nbsp;будет залогом вашей успешной торговли. Считайте свои успехи через риск, анализируйте все свои или чужие сделки через риск. Риск будет ограничивать ваш убыток, но&nbsp;не&nbsp;будет ограничивать вашу прибыль.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Формула вашего финансового результата = сумма всех прибыльных сделок в&nbsp;рисках&nbsp;&mdash; сумма всех убыточных сделок в&nbsp;рисках.
+    </p>
+    <div class="management__str str-common">
+        Пример на&nbsp;10&nbsp;сделках, где прибыльных только&nbsp;50%:
+    </div>
+    <div class="management__str str-common">
+        (1,5 +0,7*+ 1 +2,5 +3)&nbsp;&mdash; (1 +1 +1 +1 +0,5*) = 4,2 риска
+    </div>
+    <div class="management__str str-common">
+        4,2 риска * 2%&nbsp;риска = 8,4&nbsp;% чистая прибыль к&nbsp;депозиту
+    </div>
+    <p class="management__paragraph paragraph-common italic">
+        *вторая и&nbsp;последняя сделки для примера взяты с&nbsp;прибылью 0,7 риска и&nbsp;убытком 0,5 риска&nbsp;&mdash; такое тоже бывает, когда позиция закрывается вручную досрочно, в&nbsp;случае изменения рынка и&nbsp;формирования новой торговой ситуации.
+    </p>
+    <p class="management__paragraph paragraph-common italic padding">
+        Важно отметить, что <b>стоп-лосс</b> устанавливается не&nbsp;наобум, а&nbsp;исходя из&nbsp;структуры графика, объемов торгов, волатильности и&nbsp;ликвидности инструмента, поэтому для каждой конкретной сделки он&nbsp;всегда будет свой, но&nbsp;для нас это не&nbsp;имеет значения, будь он&nbsp;2% или&nbsp;30% от&nbsp;точки входа, мы&nbsp;все равно ограничим свои убытки при помощи риска и&nbsp;рассчитаем правильный объем денежных средств, необходимый для входа в&nbsp;позицию.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Таким образом, всё, что остается вам делать, это искать сделки с&nbsp;наибольшим потенциалом прибыль/риск и&nbsp;четко рассчитывать свои риски, в&nbsp;том числе и&nbsp;в&nbsp;соотношении со&nbsp;временем отработки сделки&nbsp;&mdash; СТИЛЕМ.
+    </p>
+    <p class="management__paragraph paragraph-common">
+        Добро пожаловать на&nbsp;нашу платформу, задача которой заключается в&nbsp;том, чтобы значительно облегчить и&nbsp;сократить время на&nbsp;поиск прибыльных торговых ситуаций, кратно повысить качество ваших сделок, стать вашим верным другом и&nbsp;помощников в&nbsp;задаче по&nbsp;увеличению вашего капитала.
+    </p>
+</section>
+<!-- /MANAGEMENT -->
+        </main>
+        <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__block footer__block--logo">
+        <a href="#" class="footer__logo logo">
+            <picture>
+                <source srcset="./assets/img/logo.svg" media="(min-width: 768px)">
+                <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
+                <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+              </picture>
+        </a>
+    </div>
+    <div class="footer__block footer__block--nav">
+        <nav class="nav footer__nav" title="Навигация по сайту">
+          <ul class="list-reset nav__list footer__nav-list">
+            <li class="nav__item nav__item--active footer__nav-item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="footer__block footer__block--links">
+        <ul class="list-reset footer__list">
+            <li class="footer__item"><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Пользовательское соглашение</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Не является индивидуальной инвестиционной рекомендацией</a></li>
+        </ul>
+    </div>
+    <div class="footer__block footer__block--social">
+        <span class="footer__label">Мы в соц сетях</span>
+        <a href="#" class="footer__social-link" aria-label="Телеграм">
+            <img loading="lazy" src="./assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
+        </a>
+    </div>
+    <div class="footer__rights">
+        <span>© 2024 Все права защищены</span>
+        <span>ООО "Трейдсканер"</span>
+    </div>
+</footer>
+<!-- /FOOTER -->
+    </div>
+    <script defer src="js/script.js"></script>
+</body>
+</html>

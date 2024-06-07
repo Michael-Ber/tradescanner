@@ -3,6 +3,8 @@ import { table } from "./table.js";
 import { popup } from "./popup.js";
 import { popupForm } from "./popupForm.js";
 import { changeInput } from "./changeInput.js";
+import { copyToBuffer } from "./copyToBuffer.js";
+import { tableHeaderFixed } from "./tableHeaderFixed.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     burger(); 
@@ -10,4 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     popup();
     popupForm();
     changeInput();
+    copyToBuffer();
+    tableHeaderFixed();
 })

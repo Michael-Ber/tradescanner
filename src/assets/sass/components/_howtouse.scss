@@ -1,0 +1,54 @@
+.howtouse {
+    padding: 50px;
+    @include mobile {
+        padding: 30px 15px;
+    }
+    &__paragraph {
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        font-weight: 400;
+        list-style: upper-roman;
+    }
+
+    &__list-item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list-title {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__link {
+        color: $blue-900;
+        text-decoration: underline;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        margin-top: 20px;
+    }
+
+    &__list-pos {
+        margin-bottom: 20px;
+    }
+
+    &__list-pos-item {
+        &:first-child {
+            margin-top: 20px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+.bigmargin {
+    margin-bottom: 70px;
+}

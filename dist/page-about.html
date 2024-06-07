@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Site</title>
+    <link rel="stylesheet" href="./css/vendor.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="page__body">
+    <div class="site-container">
+        <!-- HEADER -->
+<header class="header">
+    <a href="index.html" class="header__logo logo">
+        <picture>
+          <source srcset="./assets/img/logo.svg" media="(min-width: 1200px)">
+          <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 1199px)" width="74" height="62">
+          <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+        </picture>
+        
+    </a>
+    <nav class="nav" title="Меню навигации">
+      <ul class="list-reset nav__list">
+        <li class="nav__item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+        <li class="nav__item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+        <li class="nav__item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header__account">
+        <a href="#" class="telegram">
+            <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg" class="telegram__svg" >
+              <g clip-path="url(#clip0_0_112)">
+              <path d="M19.5 39C30.2696 39 39 30.2696 39 19.5C39 8.73045 30.2696 0 19.5 0C8.73045 0 0 8.73045 0 19.5C0 30.2696 8.73045 39 19.5 39Z" fill="#59AAE7"/>
+              <path d="M19.5001 0C18.638 0 17.7892 0.0566719 16.9566 0.165064C26.5243 1.41146 33.9131 9.59255 33.9131 19.5C33.9131 29.4074 26.5243 37.5885 16.9565 38.8349C17.7892 38.9433 18.638 39 19.5001 39C30.2696 39 39.0001 30.2695 39.0001 19.5C39.0001 8.73052 30.2696 0 19.5001 0Z" fill="#3D9AE3"/>
+              <path d="M12.5447 23.7003L6.25577 20.5558C6.08339 20.4696 6.08171 20.2243 6.25287 20.1357L30.145 7.77763C30.3205 7.68684 30.5231 7.83941 30.4844 8.03319L26.3709 28.6009C26.3415 28.7477 26.1845 28.8302 26.0469 28.7713L20.4564 26.3755C20.3895 26.3467 20.3129 26.3506 20.2491 26.386L13.0251 30.3994C12.868 30.4866 12.6749 30.3731 12.6749 30.1933V23.9111C12.675 23.8218 12.6246 23.7402 12.5447 23.7003Z" fill="#FCFCFC"/>
+              <path d="M15.2581 25.8198L15.219 19.5411C15.2188 19.5009 15.2396 19.4635 15.2738 19.4426L25.4732 13.2119C25.5888 13.1413 25.7098 13.2944 25.6142 13.3905L17.8523 21.2076C17.8438 21.2162 17.8366 21.2261 17.8312 21.237L16.5035 23.8922L15.4745 25.8718C15.4193 25.9781 15.2588 25.9394 15.2581 25.8198Z" fill="#D8D7DA"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_0_112">
+              <rect width="39" height="39" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+        </a>
+        <button class="btn-reset header__user header-user">
+            <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="header-user__svg">
+              <path d="M11.9992 13.406C13.7857 13.406 15.287 12.5313 16.341 10.8764C17.184 9.55287 17.6674 7.81173 17.6674 6.09935C17.6674 2.97741 15.1247 0.4375 11.9992 0.4375C8.87461 0.4375 6.33252 2.97741 6.33252 6.09935C6.33252 7.74451 6.81186 9.50387 7.61472 10.8056C8.66407 12.5068 10.1802 13.406 11.9992 13.406Z" fill="white"/>
+              <path d="M17.3744 14.4639H6.6256C3.30071 14.4639 0.595703 16.9933 0.595703 20.1025V27.5626H23.4043V20.1025C23.4043 16.9934 20.6993 14.4639 17.3744 14.4639Z" fill="white"/>
+            </svg>
+            <span class="header-user__login">Вход</span>
+        </button>
+        <div class="header__popup header-popup hidden">
+            <a href="#" class="header-popup__link">Личный кабинет</a>
+            <a href="page-login.html" class="header-popup__link">Логин</a>
+            <a href="#" class="header-popup__link">Подписки</a>
+            <a href="#" class="header-popup__link">Контакты</a>
+            <a href="page-payment.html" class="header-popup__link">Оплата</a>
+            <a href="#" class="header-popup__link">Выход</a>
+        </div>
+    </div>
+    <div class="burger" title="Бургер меню">
+        <button class="burger__btn" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <div class="burger__menu" aria-hidden="true">
+          <nav class="burger__nav" title="Меню навигации">
+            <ul class="burger__list">
+              <li class="burger__item"><a href="#" class="burger__link">О сканере</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Риск менеджмент</a></li>
+              <li class="burger__item"><a href="#" class="burger__link">Как пользоваться</a></li>
+            </ul>
+          </nav>
+         </div>
+      </div>
+</header>
+<!-- /HEADER -->
+        <main class="main">
+            <!-- ABOUT -->
+<section class="about">
+    <p class="about__paragraph paragraph-common">
+        Постоянно сканируя все доступные источники, анализируя и&nbsp;систематизируя в&nbsp;реальном времени, все значимые и&nbsp;имеющие влияние на&nbsp;изменения цены активов данные, платформа &laquo;Tradescanner.ru&raquo; выявляет потенциально-прибыльные торговые ситуации и&nbsp;наиболее благоприятные моменты для совершения сделок. Рассчитывает оптимальный диапазон входа, прогнозирует минимальные и&nbsp;максимально-возможные цели (тейк-профит), устанавливает безопасный уровень, при достижении которого сделка перестает быть актуальной (стоп-лосс), а&nbsp;также предоставляет данные о&nbsp;планируемом сроке сделки (стиль). Все расчеты систематизируются и&nbsp;отображаются в&nbsp;удобной для использования таблице.
+    </p>
+    <p class="about__paragraph paragraph-common">
+        Основной задачей платформы является максимальное сокращение времени трейдеров и&nbsp;инвесторов на&nbsp;поиск наиболее выгодных для совершения сделок торговых ситуаций, и&nbsp;как следствие увеличения количества наблюдаемых активов, расширение и&nbsp;диверсификация собственного портфеля при сохранении личного свободного времени.
+    </p>
+    <p class="about__paragraph paragraph-common">
+        Также, использование платформы сокращает расходы &laquo;профессиональных&raquo; участников рынка на&nbsp;дополнительные средства труда, такие как крупно диагональные мониторы, дополнительные компьютеры и&nbsp;сервера, так как убирает необходимость в&nbsp;постоянном мониторинге графиков.
+    </p>
+    <p class="about__paragraph paragraph-common">
+        Доступ к&nbsp;платформе &laquo;непрофессиональных&raquo; участников рынка предоставляет им&nbsp;возможность качественно и&nbsp;активно управлять собственным портфелем без отрыва от&nbsp;своей основной деятельности.
+    </p>
+    <ul class="list-reset about__list">
+        <li class="about__list-item">
+            Ежедневно платформа сканирует и&nbsp;анализирует:
+        </li>
+        <li class="about__list-item">
+            <b>Российский рынок</b>&nbsp;&mdash; все акции, в&nbsp;т.ч. привилегированные, депозитарные расписки и&nbsp;ETF, валюты в&nbsp;паре к&nbsp;рублю&nbsp;&mdash; USD, CNY, EUR, HKD, TRY, а&nbsp;также&nbsp;же некоторые товары и&nbsp;индексы торгующиеся на&nbsp;московской биржи.
+        </li>
+        <li class="about__list-item">
+            <b>Крипто USDT</b>&nbsp;&mdash; 400 самых высоколиквидных криптовалют в&nbsp;паре к&nbsp;USDT.
+        </li>
+        <li class="about__list-item">
+            <b>Крипто BTC</b>&nbsp;&mdash; 400 самых высоколиквидных криптовалют в&nbsp;паре к&nbsp;BTC.
+        </li>
+        <li class="about__list-item">
+            <b>Рынок США</b>&nbsp;&mdash; 2000 самых популярных акций и&nbsp;депозитарных расписок, торгующихся на&nbsp;биржах nasdaq и&nbsp;nyse, а&nbsp;также порядка 50&nbsp;самых популярных ETF.
+        </li>
+        <li class="about__list-item">
+            <b>Гонконгский рынок</b>&nbsp;&mdash; акции гонконгских компаний, ранее торговавшихся на&nbsp;Санкт-Петербургской бирже.
+        </li>
+    </ul>
+    <p class="about__paragraph paragraph-common">
+        Начав использовать данные сканера, ваш трейдинг и&nbsp;инвестиции перейдут на&nbsp;качественно новый уровень.
+    </p>
+    <p class="about__paragraph paragraph-common">
+        Добро пожаловать в&nbsp;сообщество прибыльных трейдеров и&nbsp;инвесторов.
+    </p>
+
+    <div class="about__ps">P.S Простой дизайн с&nbsp;мощной начинкой.</div>
+    <div class="about__gover">
+        Распоряжение Правительства Российской Федерации от&nbsp;24.10.2023 &#8470;&nbsp;2958-р &laquo;Об&nbsp;утверждении Стратегии повышения финансовой грамотности и&nbsp;формирования финансовой культуры до&nbsp;2030&nbsp;года&raquo;.
+    </div>
+
+    <div class="about__firm firm-about">
+        <div class="firm-about__name">ООО «Трейдсканер»</div>
+        <div class="firm-about__inn">ИНН / КПП: 9728125770/772801001</div>
+        <div class="firm-about__ogrn">ОГРН 1247700158430</div>
+        <address class="firm-about__address">Адрес: 117342, г. Москва, вн.тер.г.муниципальный округ Коньково, ул.Бутлерова, д.17Б, помещ. 139Н</address>
+    </div>
+</section>
+<!-- /ABOUT -->
+        </main>
+        <!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__block footer__block--logo">
+        <a href="#" class="footer__logo logo">
+            <picture>
+                <source srcset="./assets/img/logo.svg" media="(min-width: 768px)">
+                <source srcset="./assets/img/logo_mobile.svg" media="(max-width: 767px)" width="74" height="62">
+                <img loading="lazy" src="./assets/img/logo.svg" class="logo__img" width="339" height="62" alt="Логотип TradeScanner">
+              </picture>
+        </a>
+    </div>
+    <div class="footer__block footer__block--nav">
+        <nav class="nav footer__nav" title="Навигация по сайту">
+          <ul class="list-reset nav__list footer__nav-list">
+            <li class="nav__item nav__item--active footer__nav-item"><a href="page-about.html" class="nav__link">О сканере</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-management.html" class="nav__link">Риск менеджмент</a></li>
+            <li class="nav__item footer__nav-item"><a href="page-howtouse.html" class="nav__link">Как пользоваться</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="footer__block footer__block--links">
+        <ul class="list-reset footer__list">
+            <li class="footer__item"><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Пользовательское соглашение</a></li>
+            <li class="footer__item"><a href="#" class="footer__link">Не является индивидуальной инвестиционной рекомендацией</a></li>
+        </ul>
+    </div>
+    <div class="footer__block footer__block--social">
+        <span class="footer__label">Мы в соц сетях</span>
+        <a href="#" class="footer__social-link" aria-label="Телеграм">
+            <img loading="lazy" src="./assets/img/telegram.svg" class="footer__svg" width="39" height="39" alt="Телеграм">
+        </a>
+    </div>
+    <div class="footer__rights">
+        <span>© 2024 Все права защищены</span>
+        <span>ООО "Трейдсканер"</span>
+    </div>
+</footer>
+<!-- /FOOTER -->
+    </div>
+    <script defer src="js/script.js"></script>
+</body>
+</html>

@@ -1,6 +1,5 @@
 export const table = () => {
     const tabBtns = document.querySelectorAll('.hero-table__tabitem');
-    const tabContents = document.querySelectorAll('.hero-table__tabcontent');
     const tabMobileContents = document.querySelectorAll('.hero-table__mobile-content');
 
     
@@ -9,23 +8,30 @@ export const table = () => {
     tabSwitch();
     function tabSwitch() {
         tabBtns.forEach(btn => {
+            if(window.innerWidth >= 992) {
+                tabBtns[0].classList.add('hero-table__tabitem--active')
+            }else {
+                removeActive()
+            }
             if(btn.classList.contains('hero-table__tabitem--active')) {
                 if(window.innerWidth < 992) {
-                    document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
-                    // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
                 }else {
-                    // document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
                     document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
                 }
             }
             btn.addEventListener('click', () => {
-                removeActive();
                 if(window.innerWidth < 992) {
-                    btn.classList.add('hero-table__tabitem--active');
-                    document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
+                    // Переключение в мобильной таблице
+                    btn.classList.toggle('hero-table__tabitem--active');
+                    if(btn.classList.contains('hero-table__tabitem--active')) {
+                        document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
+                    }else {
+                        document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
+                    }
                 }else {
+                    // Переключение в десктопной таблице
+                    removeActive();
                     btn.classList.add('hero-table__tabitem--active');
-                    document.querySelector(`[data-tabContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'table';
                 }
                 
             })
@@ -36,9 +42,6 @@ export const table = () => {
         tabBtns.forEach(btn => {
             btn.classList.remove('hero-table__tabitem--active')
         })
-        // tabContents.forEach(content => {
-        //     content.style.display = 'none';
-        // })
         tabMobileContents.forEach(content => {
             content.style.display = 'none';
         })
