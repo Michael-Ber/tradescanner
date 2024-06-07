@@ -98,7 +98,7 @@
             z-index: 9;
             background: $black;
             width: 100%;
-            padding: 10px 15px;
+            padding: 0 15px;
         }
     }
 
@@ -174,7 +174,7 @@
         padding: 20px 0; 
         @include mobile {
             font-size: 14px;
-            width: 75%;
+            width: 90%;
         }
     }
 
@@ -318,10 +318,7 @@
         }
     }
     &__info {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: absolute;
         padding: 11px 19px;
         font-weight: 700;
         font-size: 14px;
@@ -432,7 +429,8 @@
         gap: 80px;
         margin-left: 40px;
         @include mobile {
-            @include adaptive-size('margin-left', 70, 0, 575, 320);
+            // @include adaptive-size('margin-left', 70, 0, 575, 320);
+            margin-left: 0;
             gap: 30px;
         }
     }
@@ -509,7 +507,7 @@
         position: fixed;
         top: 0;
         z-index: 9;
-        background: $gray-100;
+        background: $gray-200;
         border-radius: 0;
         
     }

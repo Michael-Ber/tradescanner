@@ -21,8 +21,10 @@ export const tableHeaderFixed = () => {
             function onToggle(self) {
                 if(self.isActive) {
                     tableHeader.classList.add('tabcontent-hero-table__head--fixed');
+                    tableBody.style.marginTop = '90px';
                 }else {
                     tableHeader.classList.remove('tabcontent-hero-table__head--fixed');
+                    tableBody.style.marginTop = '0';
                 }
             }
         }
@@ -34,6 +36,7 @@ export const tableHeaderFixed = () => {
             const tableMob = document.querySelector('.hero__img');
             const contents = document.querySelectorAll('.hero-table__mobile-content');
             const btns = document.querySelectorAll('.hero-table__tabitem');
+            const wrapper = document.querySelector('.hero-table__tabs');
 
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -41,15 +44,17 @@ export const tableHeaderFixed = () => {
                         if(window.getComputedStyle(content).display === 'block') {
                             ScrollTrigger.create({
                                 trigger: tableMob,
-                                start: 'bottom top',
-                                end: () => "+=" + tableMob.scrollHeight,
+                                start: 'bottom -20px',
+                                end: () => "+=" + content.scrollHeight,
                                 onToggle: onToggle,
                             });
                             function onToggle(self) {
                                 if(self.isActive) {
                                     tableHeaderMob.classList.add('hero-table__top--fixed');
+                                    wrapper.style.marginTop = '70px'
                                 }else {
                                     tableHeaderMob.classList.remove('hero-table__top--fixed');
+                                    wrapper.style.marginTop = '0'
                                 }
                             }
                         }
