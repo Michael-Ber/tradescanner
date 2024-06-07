@@ -9955,7 +9955,7 @@ const tableHeaderFixed = () => {
     desktop();
     function mobile() {
       const tableHeaderMob = document.querySelector('.hero-table__top');
-      const tableMob = document.querySelector('.hero-table__mobile-content');
+      const tableMob = document.querySelector('.hero__img');
       const contents = document.querySelectorAll('.hero-table__mobile-content');
       const btns = document.querySelectorAll('.hero-table__tabitem');
       btns.forEach(btn => {
@@ -9964,7 +9964,7 @@ const tableHeaderFixed = () => {
             if (window.getComputedStyle(content).display === 'block') {
               gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
                 trigger: tableMob,
-                start: 'top top',
+                start: 'bottom top',
                 end: () => "+=" + tableMob.scrollHeight,
                 onToggle: onToggle
               });

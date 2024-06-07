@@ -31,7 +31,7 @@ export const tableHeaderFixed = () => {
 
         function mobile() {
             const tableHeaderMob = document.querySelector('.hero-table__top');
-            const tableMob = document.querySelector('.hero-table__mobile-content');
+            const tableMob = document.querySelector('.hero__img');
             const contents = document.querySelectorAll('.hero-table__mobile-content');
             const btns = document.querySelectorAll('.hero-table__tabitem');
 
@@ -41,7 +41,7 @@ export const tableHeaderFixed = () => {
                         if(window.getComputedStyle(content).display === 'block') {
                             ScrollTrigger.create({
                                 trigger: tableMob,
-                                start: 'top top',
+                                start: 'bottom top',
                                 end: () => "+=" + tableMob.scrollHeight,
                                 onToggle: onToggle,
                             });
