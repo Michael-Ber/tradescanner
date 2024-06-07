@@ -5,7 +5,6 @@ export const table = () => {
     const search = document.querySelector('.tabcontent-hero-table__search');
     
 
-    window.addEventListener('resize', tabSwitch);
     tabSwitch();
     function tabSwitch() {
         tabBtns.forEach(btn => {
@@ -25,6 +24,7 @@ export const table = () => {
                     btn.classList.toggle('hero-table__tabitem--active');
                     if(btn.classList.contains('hero-table__tabitem--active')) {
                         document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
+                        document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).classList.add('table-active')
                     }else {
                         document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
                     }

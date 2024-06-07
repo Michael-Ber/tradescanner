@@ -419,6 +419,14 @@ h1, h2, h3, h4, h5, h6 {
     .hero-table__top {
       display: block;
       margin-bottom: 13px; } }
+  .hero-table__top--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: #333333;
+    width: 100%;
+    padding: 10px 0; }
 
 .hero-table__tabs {
   display: flex; }
@@ -454,12 +462,9 @@ h1, h2, h3, h4, h5, h6 {
   align-self: flex-start;
   border-radius: 30px 0 0 30px;
   min-height: 73px;
-  padding: 13px 13px;
+  padding: 13px 10px 13px 30px;
   flex-shrink: 0;
   transition: .3s background ease; }
-  @media (max-width: 1199px) {
-    .hero-table__tabitem {
-      padding: 13px 10px; } }
   @media (max-width: 991px) {
     .hero-table__tabitem {
       width: unset;
@@ -689,7 +694,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 39px; }
   .crypto-deals__value {
     font-size: clamp(15px, 1.5vw, 20px);
-    font-weight: 700;
+    font-weight: 400;
     line-height: 100%; }
   .crypto-deals__today {
     display: none;
@@ -749,9 +754,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .table-mobile-content__search-input {
   padding: 10px 20px;
-  width: 100%; }
+  width: 100%;
+  background: #000000;
+  border: none;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 2px; }
   .table-mobile-content__search-input::placeholder {
-    font-size: 12px; }
+    font-size: 10px;
+    color: #cccccc; }
+  @media (max-width: 575px) {
+    .table-mobile-content__search-input {
+      padding: 10px 5px; } }
 
 .tabcontent-hero-table__head {
   background: rgba(119, 119, 119, 0.3);
@@ -864,7 +878,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .tabcontent-hero-table__search-input {
   width: 100%;
-  padding: 25px; }
+  padding: 25px;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px; }
+  .tabcontent-hero-table__search-input::placeholder {
+    font-weight: 300;
+    color: #cccccc; }
 
 .mobile-time {
   position: relative; }
@@ -873,7 +894,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: calc(100% + 20px);
+  right: calc(100% + 20px);
   width: 150px;
   font-weight: 400;
   color: #ffffff;
@@ -883,7 +904,8 @@ h1, h2, h3, h4, h5, h6 {
   @media (max-width: 575px) {
     .popup-time {
       width: 120px;
-      left: calc(100% + 5px); } }
+      right: unset;
+      top: calc(100% + 20px); } }
 
 .popup-time-btn {
   color: currentColor; }
