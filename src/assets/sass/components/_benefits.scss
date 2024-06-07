@@ -48,6 +48,8 @@
     &__img {
         margin-left: auto;
         @include mobile {
+            max-width: unset;
+            width: 110%;
             margin: 0 auto;
         }
     }

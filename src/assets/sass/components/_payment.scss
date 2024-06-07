@@ -63,7 +63,7 @@
         justify-items: center;
         align-items: center;
         padding: 20px clamp(16px, 5vw, 60px);
-        font-size: clamp(12px, 2vw, 20px);
+        font-size: clamp(13px, 2vw, 20px);
         &:nth-child(odd) {
             background: rgba($gray-200, .5);
         }
@@ -216,11 +216,15 @@
 
     &__deadline {
         display: none;
+        width: 100%;
+        justify-content: space-between;
         text-transform: uppercase;
-        font-size: clamp(10px, 1vw, 18px);
+        font-size: clamp(12px, 1vw, 18px);
         font-weight: 400;
         @include mobile {
-            display: block;
+            display: flex;
+            grid-column: span 3;
+            padding-right: clamp(10px, 4vw, 30px);
         }
     }
 

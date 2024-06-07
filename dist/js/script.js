@@ -9795,6 +9795,14 @@ const popup = () => {
       });
     }
     headerPopup();
+    function cookiesPopup() {
+      const cookies = document.querySelector('.cookies');
+      const closeCookies = document.querySelector('.cookies__close');
+      closeCookies.addEventListener('click', () => {
+        cookies.style.display = 'none';
+      });
+    }
+    cookiesPopup();
   } catch (error) {
     console.log(error);
   }
@@ -9851,11 +9859,7 @@ const table = () => {
   tabSwitch();
   function tabSwitch() {
     tabBtns.forEach(btn => {
-      if (window.innerWidth >= 992) {
-        tabBtns[0].classList.add('hero-table__tabitem--active');
-      } else {
-        removeActive();
-      }
+      tabBtns[0].classList.add('hero-table__tabitem--active');
       if (btn.classList.contains('hero-table__tabitem--active')) {
         if (window.innerWidth < 992) {} else {
           document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
@@ -9864,11 +9868,12 @@ const table = () => {
       btn.addEventListener('click', () => {
         if (window.innerWidth < 992) {
           // Переключение в мобильной таблице
+          removeActive();
           btn.classList.toggle('hero-table__tabitem--active');
           if (btn.classList.contains('hero-table__tabitem--active')) {
-            document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
+            document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
           } else {
-            document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
+            document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
           }
         } else {
           // Переключение в десктопной таблице

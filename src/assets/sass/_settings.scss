@@ -14,10 +14,16 @@ html {
         font-weight: 700;
         background: $black;
         color: $white;
+        min-width: 320px;
         &--scroll-unable {
             overflow: hidden;
         }
     }
+}
+
+.site-container {
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 img {

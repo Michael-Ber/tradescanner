@@ -4,7 +4,6 @@ export const popup = () => {
             const btns = document.querySelectorAll('[data-popup]');
             const popups = document.querySelectorAll('.hero-table__popup');
             const closeBtns = document.querySelectorAll('.hero-table__popup-close');
-    
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     closeAll();
@@ -51,6 +50,17 @@ export const popup = () => {
             })
         }
         headerPopup()
+
+        function cookiesPopup() {
+            const cookies = document.querySelector('.cookies');
+            const closeCookies = document.querySelector('.cookies__close');
+
+            closeCookies.addEventListener('click', () => {
+                cookies.style.display = 'none';
+            })
+        }
+
+        cookiesPopup()
         
     } catch (error) {
         console.log(error)

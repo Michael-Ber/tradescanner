@@ -45,9 +45,14 @@ html {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   background: #000000;
-  color: #ffffff; }
+  color: #ffffff;
+  min-width: 320px; }
   .page__body--scroll-unable {
     overflow: hidden; }
+
+.site-container {
+  margin: 0 auto;
+  overflow: hidden; }
 
 img {
   display: block;
@@ -489,8 +494,10 @@ h1, h2, h3, h4, h5, h6 {
       width: 75%; } }
 
 .hero-table__popup {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 100%;
   z-index: 9;
@@ -603,8 +610,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-table__info {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 11px 19px;
   font-weight: 700;
   font-size: 14px;
@@ -643,6 +651,15 @@ h1, h2, h3, h4, h5, h6 {
     .hero-table-top__item--bg {
       padding: 12px 4px; } }
 
+.hero-table-top__calendar {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer; }
+  .hero-table-top__calendar::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer; }
+
 .hero-table-tabitem__wrapper {
   display: flex;
   align-items: center;
@@ -663,7 +680,7 @@ h1, h2, h3, h4, h5, h6 {
 .crypto-name {
   font-size: clamp(15px, 1.5vw, 20px);
   line-height: 100%;
-  font-weight: 700; }
+  font-weight: 400; }
 
 .crypto-deals {
   display: flex;
@@ -717,11 +734,22 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: flex-end; }
 
-.table-mobile-content__name:not(:last-child) {
-  margin-bottom: 16px; }
+.table-mobile-content__name {
+  font-weight: 400; }
+  .table-mobile-content__name:not(:last-child) {
+    margin-bottom: 16px; }
 
 .table-mobile-content__value:not(:last-child) {
   margin-bottom: 16px; }
+
+.table-mobile-content__col {
+  font-weight: 400; }
+
+.table-mobile-content__col-svg path {
+  transition: .3s fill ease-in-out; }
+
+.table-mobile-content__col-svg:hover path {
+  fill: currentColor; }
 
 .tabcontent-hero-table__head {
   background: rgba(119, 119, 119, 0.3);
@@ -806,10 +834,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 26px 0;
   font-size: clamp(12px, 1vw, 16px);
   height: 70px;
-  font-weight: 400;
-  cursor: pointer; }
+  font-weight: 400; }
   .tabcontent-hero-table__body-td:hover {
     text-decoration: underline; }
+  .tabcontent-hero-table__body-td span:hover {
+    text-decoration: underline; }
+
+.tabcontent-hero-table .two-digits:hover {
+  text-decoration: none; }
 
 .tabcontent-hero-table__body-svg path {
   transition: .3s fill ease-in-out; }
@@ -822,6 +854,9 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between; }
 
 .tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg path {
+  stroke: currentColor; }
+
+.table-mobile-content__fav > .table-mobile-content__col-svg path {
   stroke: currentColor; }
 
 .benefits {
@@ -864,6 +899,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto; }
     @media (max-width: 575px) {
       .benefits-item__img {
+        max-width: unset;
+        width: 110%;
         margin: 0 auto; } }
   .benefits-item__descr {
     width: 50%;
@@ -1247,7 +1284,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-items: center;
     align-items: center;
     padding: 20px clamp(16px, 5vw, 60px);
-    font-size: clamp(12px, 2vw, 20px); }
+    font-size: clamp(13px, 2vw, 20px); }
     .payment__item:nth-child(odd) {
       background: rgba(49, 49, 49, 0.5); }
     @media (max-width: 1199px) {
@@ -1358,12 +1395,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .payment-item__deadline {
   display: none;
+  width: 100%;
+  justify-content: space-between;
   text-transform: uppercase;
-  font-size: clamp(10px, 1vw, 18px);
+  font-size: clamp(12px, 1vw, 18px);
   font-weight: 400; }
   @media (max-width: 575px) {
     .payment-item__deadline {
-      display: block; } }
+      display: flex;
+      grid-column: span 3;
+      padding-right: clamp(10px, 4vw, 30px); } }
 
 .payment-item__amount {
   display: flex;
