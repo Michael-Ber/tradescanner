@@ -470,6 +470,7 @@
         }
     }
     &__col {
+        position: relative;
         font-weight: 400;
     }
     &__col-svg {
@@ -593,6 +594,7 @@
 
 
     &__body-td {
+        position: relative;
         width: fit-content;
         justify-self: center;
         text-align: center;
@@ -603,12 +605,18 @@
         &:hover {
             font-weight: 700;
         }
-        
-        span {
+
+        .pointer {
             &:hover {
                 font-weight: 700;
             }
         }
+        
+        // span {
+        //     &:hover {
+        //         font-weight: 700;
+        //     }
+        // }
     }
     .two-digits {
         &:hover {
@@ -678,6 +686,9 @@
 }
 .popup-time-btn {
     color: currentColor;
+    &:hover {
+        font-weight: 700;
+    }
 }
 
 .tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg {
@@ -694,7 +705,11 @@
     cursor: pointer;
 }
 
-.buffer, .mobile-buffer {
-    position: relative;
+.underline {
+    &:hover {
+        text-decoration: underline;
+        font-weight: 400 !important;
+    }
 }
+
 // END HERO

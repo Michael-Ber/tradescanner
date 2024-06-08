@@ -4,7 +4,9 @@ export const copyToBuffer = () => {
         const dataMobile = document.querySelectorAll('.mobile-buffer');
         data.forEach(str => {
             str.addEventListener('click', (e) => {
-                const infoBlock = str.querySelector('.hero-table__info');
+                console.log(str.textContent)
+                const infoBlock = str.parentNode.querySelector('.hero-table__info');
+                console.log(infoBlock)
                 navigator.clipboard.writeText(str.textContent)
                 .then(() => {
                     infoBlock.classList.remove('hidden');
@@ -16,7 +18,7 @@ export const copyToBuffer = () => {
         })
         dataMobile.forEach(str => {
             str.addEventListener('click', () => {
-                const infoBlock = str.querySelector('.hero-table__info');
+                const infoBlock = str.parentNode.querySelector('.hero-table__info');
                 navigator.clipboard.writeText(str.textContent)
                 .then(() => {
                     infoBlock.classList.remove('hidden');

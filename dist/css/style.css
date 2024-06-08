@@ -748,6 +748,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 16px; }
 
 .table-mobile-content__col {
+  position: relative;
   font-weight: 400; }
 
 .table-mobile-content__col-svg path {
@@ -847,6 +848,7 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(49, 49, 49, 0.5); }
 
 .tabcontent-hero-table__body-td {
+  position: relative;
   width: -moz-fit-content;
   width: fit-content;
   justify-self: center;
@@ -857,7 +859,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400; }
   .tabcontent-hero-table__body-td:hover {
     font-weight: 700; }
-  .tabcontent-hero-table__body-td span:hover {
+  .tabcontent-hero-table__body-td .pointer:hover {
     font-weight: 700; }
 
 .tabcontent-hero-table .two-digits:hover {
@@ -913,6 +915,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .popup-time-btn {
   color: currentColor; }
+  .popup-time-btn:hover {
+    font-weight: 700; }
 
 .tabcontent-hero-table__body-td > .tabcontent-hero-table__body-svg path {
   stroke: currentColor; }
@@ -923,8 +927,9 @@ h1, h2, h3, h4, h5, h6 {
 .pointer {
   cursor: pointer; }
 
-.buffer, .mobile-buffer {
-  position: relative; }
+.underline:hover {
+  text-decoration: underline;
+  font-weight: 400 !important; }
 
 .benefits {
   padding: 82px 40px 0 40px; }
