@@ -9709,15 +9709,11 @@ const copyToBuffer = () => {
   try {
     const data = document.querySelectorAll('.buffer');
     const dataMobile = document.querySelectorAll('.mobile-buffer');
-    const infoBlock = document.querySelector('.hero-table__info');
     data.forEach(str => {
       str.addEventListener('click', e => {
-        console.log(e.target.getBoundingClientRect().left);
-        console.log(e.target.getBoundingClientRect().top);
+        const infoBlock = str.querySelector('.hero-table__info');
         navigator.clipboard.writeText(str.textContent).then(() => {
           infoBlock.classList.remove('hidden');
-          infoBlock.style.top = e.target.getBoundingClientRect().top - 30 + 'px';
-          infoBlock.style.left = e.target.getBoundingClientRect().left + 50 + 'px';
           setTimeout(() => {
             infoBlock.classList.add('hidden');
           }, 2000);
@@ -9726,6 +9722,7 @@ const copyToBuffer = () => {
     });
     dataMobile.forEach(str => {
       str.addEventListener('click', () => {
+        const infoBlock = str.querySelector('.hero-table__info');
         navigator.clipboard.writeText(str.textContent).then(() => {
           infoBlock.classList.remove('hidden');
           setTimeout(() => {
@@ -9972,12 +9969,14 @@ const tableHeaderFixed = () => {
       const wrapper = document.querySelector('.hero-table__tabs');
       btns.forEach(btn => {
         btn.addEventListener('click', () => {
+          gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.killAll();
           contents.forEach(content => {
             if (window.getComputedStyle(content).display === 'block') {
               gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
                 trigger: tableMob,
+                endTrigger: content,
                 start: 'bottom -20px',
-                end: () => "+=" + content.scrollHeight,
+                end: "bottom",
                 onToggle: onToggle
               });
               function onToggle(self) {
@@ -10092,3 +10091,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /******/ })()
 ;
+//# sourceMappingURL=script.js.map

@@ -40,12 +40,14 @@ export const tableHeaderFixed = () => {
 
             btns.forEach(btn => {
                 btn.addEventListener('click', () => {
+                    ScrollTrigger.killAll(); 
                     contents.forEach(content => {
                         if(window.getComputedStyle(content).display === 'block') {
                             ScrollTrigger.create({
                                 trigger: tableMob,
+                                endTrigger: content,
                                 start: 'bottom -20px',
-                                end: () => "+=" + content.scrollHeight,
+                                end: "bottom",
                                 onToggle: onToggle,
                             });
                             function onToggle(self) {

@@ -617,6 +617,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-table__info {
   position: absolute;
+  top: 50%;
+  left: calc(100% + 20px);
+  transform: translateY(-50%);
   padding: 11px 19px;
   font-weight: 700;
   font-size: 14px;
@@ -624,7 +627,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2px;
   border: 1px solid #ffffff;
   transition: .3s opacity ease-in-out, .3s visibility ease-in-out;
+  color: #ffffff;
   z-index: 9; }
+  .hero-table__info--toleft {
+    right: calc(100% + 20px);
+    left: unset; }
 
 .hero-table__popup-close {
   position: absolute;
@@ -915,6 +922,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .pointer {
   cursor: pointer; }
+
+.buffer, .mobile-buffer {
+  position: relative; }
 
 .benefits {
   padding: 82px 40px 0 40px; }
@@ -1610,3 +1620,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .bigmargin {
   margin-bottom: 70px; }
+/*# sourceMappingURL=style.css.map */
