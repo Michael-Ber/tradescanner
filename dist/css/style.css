@@ -857,7 +857,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(12px, 1vw, 16px);
   height: 70px;
   font-weight: 400; }
-  .tabcontent-hero-table__body-td:hover {
+  .tabcontent-hero-table__body-td:hover:not(.no-effect) {
     font-weight: 700; }
   .tabcontent-hero-table__body-td .pointer:hover {
     font-weight: 700; }
@@ -1512,7 +1512,6 @@ h1, h2, h3, h4, h5, h6 {
   background: #40acff; }
 
 .cookies {
-  display: none;
   position: relative;
   padding: 24px clamp(10px, 5vw, 80px);
   font-weight: 400;
@@ -1566,8 +1565,13 @@ h1, h2, h3, h4, h5, h6 {
     gap: 15px;
     font-weight: 400; }
 
-.firm-about__address {
-  font-style: normal; }
+.firm-about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 140%; }
+  .firm-about__address {
+    font-style: normal; }
 
 .management {
   padding: 50px; }
@@ -1626,4 +1630,51 @@ h1, h2, h3, h4, h5, h6 {
 
 .bigmargin {
   margin-bottom: 70px; }
+
+.recomend {
+  padding: 50px; }
+  @media (max-width: 575px) {
+    .recomend {
+      padding: 30px 15px; } }
+  .recomend__firm {
+    margin-bottom: 30px; }
+  .recomend__title {
+    margin-bottom: 30px; }
+  .recomend__paragraph {
+    margin-bottom: 30px; }
+
+.polityc {
+  padding: 50px; }
+  @media (max-width: 575px) {
+    .polityc {
+      padding: 30px 15px; } }
+  .polityc__paragraph {
+    font-weight: 400; }
+  .polityc__target {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    align-items: center;
+    max-width: 50%;
+    font-weight: 400; }
+    @media (max-width: 1199px) {
+      .polityc__target {
+        max-width: 100%; } }
+
+.terms {
+  padding: 50px; }
+  @media (max-width: 575px) {
+    .terms {
+      padding: 30px 15px; } }
+  .terms__title {
+    margin-bottom: 40px;
+    font-size: clamp(24px, 4vw, 32px); }
+  .terms__paragraph {
+    font-weight: 400; }
+  .terms__par-title {
+    margin: 20px 0;
+    font-size: clamp(20px, 4vw, 24px); }
+
+.bold {
+  font-weight: 700; }
 /*# sourceMappingURL=style.css.map */

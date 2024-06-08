@@ -603,7 +603,10 @@
         height: 70px;
         font-weight: 400;
         &:hover {
-            font-weight: 700;
+            &:not(.no-effect) {
+
+                font-weight: 700;
+            }
         }
 
         .pointer {
@@ -711,5 +714,7 @@
         font-weight: 400 !important;
     }
 }
+
+
 
 // END HERO

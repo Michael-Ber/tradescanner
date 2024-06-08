@@ -1,0 +1,21 @@
+.polityc {
+    padding: 50px;
+    @include mobile {
+        padding: 30px 15px;
+    }
+    &__paragraph {
+        font-weight: 400;
+    }
+
+    &__target {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        align-items: center;
+        max-width: 50%;
+        font-weight: 400;
+        @include desktop-md {
+            max-width: 100%;
+        }
+    }
+}

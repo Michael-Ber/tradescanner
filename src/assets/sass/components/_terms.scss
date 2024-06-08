@@ -1,0 +1,23 @@
+.terms {
+    padding: 50px;
+    @include mobile {
+        padding: 30px 15px;
+    }
+    &__title {
+        margin-bottom: 40px;
+        font-size: clamp(24px, 4vw, 32px);
+    }
+
+    &__paragraph {
+        font-weight: 400;
+    }
+
+    &__par-title {
+        margin: 20px 0;
+        font-size: clamp(20px, 4vw, 24px);
+    }
+}
+.bold {
+    font-weight: 700;
+}
+

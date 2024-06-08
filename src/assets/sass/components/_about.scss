@@ -36,7 +36,10 @@
     }
 }
 .firm-about {
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 140%;
     &__address {
         font-style: normal;
     }

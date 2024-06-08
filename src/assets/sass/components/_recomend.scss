@@ -1,0 +1,17 @@
+.recomend {
+    padding: 50px;
+    @include mobile {
+        padding: 30px 15px;
+    }
+    &__firm {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__paragraph {
+        margin-bottom: 30px;
+    }
+}
