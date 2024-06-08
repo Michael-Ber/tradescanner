@@ -641,11 +641,11 @@
         display: none;
     }
     &__search-input {
-        width: 100%;
-        padding: 25px;
+        width: 99%;
+        padding: 27px;
         background: $black;
         color: $white;
-        border: none;
+        border: 1px solid $gray-50;
         border-radius: 2px;
         &::placeholder {
             font-weight: 300;

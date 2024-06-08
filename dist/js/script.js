@@ -9869,7 +9869,10 @@ const table = () => {
   const tabBtns = document.querySelectorAll('.hero-table__tabitem');
   const tabMobileContents = document.querySelectorAll('.hero-table__mobile-content');
   const table = document.querySelector('.tabcontent-hero-table__body');
+  const tableMobile = document.querySelector('.hero-table__tabs');
   const search = document.querySelector('.tabcontent-hero-table__search');
+  const tableHeader = document.querySelector('.tabcontent-hero-table__head');
+  const tableMobileHeader = document.querySelector('.hero-table__top');
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 992) {
       tabSwitch();
@@ -9879,20 +9882,25 @@ const table = () => {
   function tabSwitch() {
     tabBtns.forEach(btn => {
       removeActive();
-      tabBtns[0].classList.add('hero-table__tabitem--active');
-      if (btn.classList.contains('hero-table__tabitem--active')) {
-        if (window.innerWidth < 992) {} else {
-          document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
-        }
-      }
+      tabBtns[0].classList.add('hero-table__tabitem--active'); //Первый элемент активный
+
+      // if(btn.classList.contains('hero-table__tabitem--active')) {
+      //     if(window.innerWidth >= 992) {
+      //         document.querySelector(`[data-tabMobileContent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
+      //     }
+      // }
       btn.addEventListener('click', () => {
         if (window.innerWidth < 992) {
           // Переключение в мобильной таблице
           removeActive();
           btn.classList.toggle('hero-table__tabitem--active');
+          if (btn.getAttribute('data-tabBtn') === 'search') {
+            tableMobileHeader.classList.remove('hero-table__top--fixed');
+            tableMobile.style.marginTop = 0;
+          }
           if (btn.classList.contains('hero-table__tabitem--active')) {
             document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'block';
-            document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).classList.add('table-active');
+            document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).classList.add('table--active');
           } else {
             document.querySelector(`[data-tabmobilecontent='${btn.getAttribute('data-tabBtn')}']`).style.display = 'none';
           }
@@ -9902,9 +9910,13 @@ const table = () => {
           btn.classList.add('hero-table__tabitem--active');
           if (btn.getAttribute('data-tabBtn') === 'search') {
             table.style.display = 'none';
+            table.classList.remove('table--active');
             document.querySelector(`[data-tabContent=${btn.getAttribute('data-tabBtn')}]`).style.display = 'block';
+            tableHeader.classList.remove('tabcontent-hero-table__head--fixed');
+            table.style.marginTop = 0;
           } else {
             table.style.display = 'block';
+            table.classList.add('table--active');
             search.style.display = 'none';
           }
         }
@@ -9942,14 +9954,33 @@ const tableHeaderFixed = () => {
   try {
     function desktop() {
       const tableHeader = document.querySelector('.tabcontent-hero-table__head');
-      const table = document.querySelector('.hero-table__tabcontent');
+      const table = document.querySelector('.hero__table');
       const tableBody = document.querySelector('.tabcontent-hero-table__body');
-      gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-        trigger: table,
-        start: 'top top',
-        end: () => "+=" + tableBody.scrollHeight,
-        onToggle: onToggle
-      });
+      const btns = document.querySelectorAll('.hero-table__tabitem');
+      function desktopTableHeader() {
+        if (tableBody.classList.contains('table--active')) {
+          gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+            trigger: table,
+            start: 'top top',
+            end: () => "+=" + tableBody.scrollHeight,
+            onToggle: onToggle
+          });
+        }
+        btns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.killAll();
+            if (tableBody.classList.contains('table--active')) {
+              gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+                trigger: table,
+                markers: true,
+                start: 'top top',
+                end: () => "+=" + tableBody.scrollHeight,
+                onToggle: onToggle
+              });
+            }
+          });
+        });
+      }
       function onToggle(self) {
         if (self.isActive) {
           tableHeader.classList.add('tabcontent-hero-table__head--fixed');
@@ -9959,6 +9990,8 @@ const tableHeaderFixed = () => {
           tableBody.style.marginTop = '0';
         }
       }
+      desktopTableHeader();
+      window.addEventListener('resize', desktopTableHeader);
     }
     desktop();
     function mobile() {
@@ -9967,31 +10000,39 @@ const tableHeaderFixed = () => {
       const contents = document.querySelectorAll('.hero-table__mobile-content');
       const btns = document.querySelectorAll('.hero-table__tabitem');
       const wrapper = document.querySelector('.hero-table__tabs');
-      btns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.killAll();
-          contents.forEach(content => {
-            if (window.getComputedStyle(content).display === 'block') {
-              gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
-                trigger: tableMob,
-                endTrigger: content,
-                start: 'bottom -20px',
-                end: "bottom",
-                onToggle: onToggle
-              });
-              function onToggle(self) {
-                if (self.isActive) {
-                  tableHeaderMob.classList.add('hero-table__top--fixed');
-                  wrapper.style.marginTop = '70px';
-                } else {
-                  tableHeaderMob.classList.remove('hero-table__top--fixed');
-                  wrapper.style.marginTop = '0';
-                }
+      function mobileTableHeader() {
+        if (window.innerWidth < 992) {
+          btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.killAll();
+              if (btn.getAttribute('data-tabbtn') !== 'search') {
+                contents.forEach(content => {
+                  if (content.classList.contains('table--active')) {
+                    gsap_ScrollTrigger_js__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+                      trigger: tableMob,
+                      endTrigger: content,
+                      start: 'bottom -20px',
+                      end: "bottom",
+                      onToggle: onToggle
+                    });
+                  }
+                });
               }
-            }
+            });
           });
-        });
-      });
+          function onToggle(self) {
+            if (self.isActive) {
+              tableHeaderMob.classList.add('hero-table__top--fixed');
+              wrapper.style.marginTop = '70px';
+            } else {
+              tableHeaderMob.classList.remove('hero-table__top--fixed');
+              wrapper.style.marginTop = '0';
+            }
+          }
+        }
+      }
+      mobileTableHeader();
+      window.addEventListener('resize', mobileTableHeader);
     }
     mobile();
   } catch (error) {

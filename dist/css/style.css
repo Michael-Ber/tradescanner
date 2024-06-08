@@ -881,11 +881,11 @@ h1, h2, h3, h4, h5, h6 {
   display: none; }
 
 .tabcontent-hero-table__search-input {
-  width: 100%;
-  padding: 25px;
+  width: 99%;
+  padding: 27px;
   background: #000000;
   color: #ffffff;
-  border: none;
+  border: 1px solid #777777;
   border-radius: 2px; }
   .tabcontent-hero-table__search-input::placeholder {
     font-weight: 300;
@@ -1507,6 +1507,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #40acff; }
 
 .cookies {
+  display: none;
   position: relative;
   padding: 24px clamp(10px, 5vw, 80px);
   font-weight: 400;
